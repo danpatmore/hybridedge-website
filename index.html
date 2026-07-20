@@ -10,6 +10,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="HybridEdge — real running costs for your plug-in hybrid. Petrol and electricity per trip, measured from the car. No account, no data collection.">
 <title>HybridEdge — real running costs for your PHEV</title>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="HybridEdge">
+<meta property="og:title" content="HybridEdge — real running costs for your PHEV">
+<meta property="og:description" content="Petrol and electricity per trip, measured from the car. No account, no data collection.">
+<meta property="og:url" content="https://hybridedge.com.au/">
+<meta property="og:image" content="https://hybridedge.com.au/images/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="HybridEdge — real running costs for your PHEV">
+<meta name="twitter:description" content="Petrol and electricity per trip, measured from the car. No account, no data collection.">
+<meta name="twitter:image" content="https://hybridedge.com.au/images/og-image.jpg">
 <style>
   :root {
     --bg: #0c0f12;
@@ -81,6 +93,30 @@
     text-wrap: balance;
   }
   .thesis em { font-style: normal; color: var(--electric); }
+
+  /* ---------- imagery ---------- */
+  .heroshot { margin: 30px 0 0; }
+  .heroshot img { width: 100%; height: auto; display: block; }
+  .gallery {
+    display: flex; gap: 16px;
+    overflow-x: auto; -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    padding: 4px 2px 14px;
+    scrollbar-width: thin;
+  }
+  .gallery figure {
+    flex: 0 0 228px; margin: 0;
+    scroll-snap-align: start;
+  }
+  .gallery img { width: 100%; height: auto; display: block; }
+  .gallery figcaption {
+    font-size: 12.5px; color: var(--text-2);
+    text-align: center; margin-top: 6px;
+  }
+  .gallery-hint {
+    font-size: 12px; color: var(--text-2);
+    text-align: center; margin: 2px 0 0;
+  }
 
   /* ---------- cards ---------- */
   .card {
@@ -165,6 +201,17 @@
     </div>
 
     <h2 class="thesis">Every number in the app is <em>measured from the car</em> — or it isn't shown.</h2>
+
+    <div class="heroshot">
+      <picture>
+        <source type="image/webp"
+                srcset="images/hero-5-screens-620.webp 620w, images/hero-5-screens-1240.webp 1240w"
+                sizes="(max-width: 620px) 100vw, 580px">
+        <img src="images/hero-5-screens-1240.jpg" width="1240" height="854"
+             alt="Five HybridEdge screens: trip logbook, energy-flow Sankey diagram, trip detail, cost breakdown and dashboard"
+             fetchpriority="high">
+      </picture>
+    </div>
   </header>
 
   <section class="card">
@@ -208,6 +255,77 @@
       <li>Insights computed from your own trips
         <span class="why">deterministic arithmetic over your data — no AI making numbers up</span></li>
     </ul>
+  </section>
+
+  <section class="card">
+    <p class="eyebrow">See it on screen</p>
+    <div class="gallery">
+      <figure>
+        <picture>
+          <source type="image/webp" srcset="images/simple-dashboard-600.webp">
+          <img src="images/simple-dashboard-600.jpg" width="600" height="1217" loading="lazy"
+               alt="Dashboard screen: average cost per 100 km, 30-day total, and the pure-EV vs petrol split">
+        </picture>
+        <figcaption>Cost at a glance</figcaption>
+      </figure>
+      <figure>
+        <picture>
+          <source type="image/webp" srcset="images/cost-breakdown-600.webp">
+          <img src="images/cost-breakdown-600.jpg" width="600" height="1217" loading="lazy"
+               alt="Cost breakdown screen: true cost per 100 km, electric vs petrol composition, savings vs a petrol SUV">
+        </picture>
+        <figcaption>True cost per 100&nbsp;km</figcaption>
+      </figure>
+      <figure>
+        <picture>
+          <source type="image/webp" srcset="images/trip-detail-600.webp">
+          <img src="images/trip-detail-600.jpg" width="600" height="1217" loading="lazy"
+               alt="Trip detail screen: energy over the trip, battery, petrol, regen and measured pure-EV kilometres">
+        </picture>
+        <figcaption>Every trip, in detail</figcaption>
+      </figure>
+      <figure>
+        <picture>
+          <source type="image/webp" srcset="images/energy-sankey-600.webp">
+          <img src="images/energy-sankey-600.jpg" width="600" height="1217" loading="lazy"
+               alt="Energy-flow Sankey diagram: petrol, grid and regen flows to the wheels">
+        </picture>
+        <figcaption>Where the energy goes</figcaption>
+      </figure>
+      <figure>
+        <picture>
+          <source type="image/webp" srcset="images/logbook-600.webp">
+          <img src="images/logbook-600.jpg" width="600" height="1217" loading="lazy"
+               alt="Logbook screen: trip history with per-trip energy split bars">
+        </picture>
+        <figcaption>The logbook</figcaption>
+      </figure>
+      <figure>
+        <picture>
+          <source type="image/webp" srcset="images/energy-sources-600.webp">
+          <img src="images/energy-sources-600.jpg" width="600" height="1217" loading="lazy"
+               alt="Energy sources screen: grid-charged vs regen share and CO2 figures">
+        </picture>
+        <figcaption>Sources &amp; CO₂</figcaption>
+      </figure>
+      <figure>
+        <picture>
+          <source type="image/webp" srcset="images/detailed-dashboard-600.webp">
+          <img src="images/detailed-dashboard-600.jpg" width="600" height="1217" loading="lazy"
+               alt="Detailed dashboard screen: energy split, combined efficiency and totals">
+        </picture>
+        <figcaption>The detailed view</figcaption>
+      </figure>
+      <figure>
+        <picture>
+          <source type="image/webp" srcset="images/phev-database-600.webp">
+          <img src="images/phev-database-600.jpg" width="600" height="1217" loading="lazy"
+               alt="PHEV database screen: vehicle specifications for supported plug-in hybrids">
+        </picture>
+        <figcaption>PHEV database</figcaption>
+      </figure>
+    </div>
+    <p class="gallery-hint">Swipe or scroll sideways for more screens →</p>
   </section>
 
   <section class="card privacy">
