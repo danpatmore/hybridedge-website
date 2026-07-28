@@ -14,23 +14,32 @@
   @media (prefers-color-scheme: dark) {
     body { color: #e8e8e8; background: #0b0e11; }
     a { color: #6db3f2; }
+    nav.top a { background: #14181d; border-color: #1e242b; color: #98a2ab; }
+    nav.top a.current { border-color: #2aa87e; color: #2aa87e; }
     .card { background: #14181d; }
   }
   h1 { font-size: 1.7em; margin-bottom: 0.2em; }
   h2 { font-size: 1.15em; margin-top: 2em; }
   .card { background: #f0f5f2; border-radius: 12px; padding: 16px 20px; margin: 24px 0; }
   a { color: #1d6ea5; }
+  nav.top { display: flex; gap: 8px; margin-bottom: 32px; }
+  nav.top a {
+    flex: 1; text-align: center; font-size: 0.85em; padding: 7px 4px;
+    background: #f0f2f4; border: 1px solid #e2e6ea; border-radius: 999px;
+    color: #3a4750; text-decoration: none;
+  }
+  nav.top a.current { border-color: #2aa87e; color: #1d7a5c; font-weight: 600; }
   dt { font-weight: 600; margin-top: 1.2em; }
   dd { margin: 0.2em 0 0 0; }
 </style>
 </head>
 <body>
 
-<nav style="font-size:0.9em; margin-bottom:28px;">
-  <a href="index.html">Home</a> ·
-  <a href="faq.html">FAQ</a> ·
-  <a href="support.html">Support</a> ·
-  <a href="privacy.html">Privacy</a> ·
+<nav class="top">
+  <a href="index.html">Home</a>
+  <a href="faq.html">FAQ</a>
+  <a href="support.html" class="current">Support</a>
+  <a href="privacy.html">Privacy</a>
   <a href="terms.html">Terms</a>
 </nav>
 
