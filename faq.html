@@ -19,6 +19,15 @@
     margin: 24px 0; font-weight: 500;
   }
   a { color: #1d6ea5; }
+  table.readers { width: 100%; border-collapse: collapse; font-size: 0.92em; margin: 12px 0; }
+  table.readers th, table.readers td {
+    text-align: left; padding: 8px 10px; vertical-align: top;
+    border-bottom: 1px solid #e2e6ea;
+  }
+  .status-yes   { color: #1d7a5c; font-weight: 600; white-space: nowrap; }
+  .status-maybe { color: #a06a00; font-weight: 600; white-space: nowrap; }
+  .status-no    { color: #b3352b; font-weight: 600; white-space: nowrap; }
+  .price { font-size: 0.85em; opacity: 0.65; }
   nav.top { display: flex; gap: 8px; margin-bottom: 32px; }
   nav.top a {
     flex: 1; text-align: center; font-size: 0.85em; padding: 7px 4px;
@@ -30,6 +39,10 @@
     body { color: #e8e8e8; background: #0b0e11; }
     a { color: #6db3f2; }
     .summary { background: #14181d; }
+    table.readers th, table.readers td { border-bottom-color: #1e242b; }
+    .status-yes   { color: #2aa87e; }
+    .status-maybe { color: #e0a63a; }
+    .status-no    { color: #e0655a; }
     nav.top a { background: #14181d; border-color: #1e242b; color: #98a2ab; }
     nav.top a.current { border-color: #2aa87e; color: #2aa87e; }
   }
@@ -46,7 +59,7 @@
 </nav>
 
 <h1>Frequently asked questions</h1>
-<p class="updated">HybridEdge beta · Updated 27 July 2026</p>
+<p class="updated">HybridEdge beta · Updated 29 July 2026</p>
 
 <div class="summary">
   The short version: HybridEdge measures what your plug-in hybrid really
@@ -82,12 +95,86 @@ the app records battery, fuel, odometer, and speed continuously while you
 drive.</p>
 
 <h2>Which OBD readers are compatible?</h2>
-<p>The tested and recommended reader is the Veepeak OBDCheck BLE+. If you
-already own a reader, it will probably work if it's Bluetooth Low Energy
-(the listing will say BLE or iOS support) with a genuine ELM327 chipset,
-v1.5 or newer. Wi-Fi and classic Bluetooth readers don't work with iPhone
-apps. If a reader turns out not to be compatible, the app says so clearly,
-and manual entry always works regardless.</p>
+<p>The short rule: HybridEdge works with Bluetooth Low Energy readers that
+speak the ELM327 command set. If a reader turns out not to be compatible,
+the app says so clearly on screen, and manual entry always works regardless.
+Here's the current state of the list:</p>
+
+<table class="readers">
+  <tr><th>Reader</th><th>Status</th><th>Notes</th></tr>
+  <tr>
+    <td><strong>Veepeak OBDCheck BLE+</strong><br><span class="price">~$50</span></td>
+    <td class="status-yes">Confirmed</td>
+    <td>The tested and recommended reader, validated over hundreds of
+    kilometres of driving.</td>
+  </tr>
+  <tr>
+    <td><strong>Veepeak OBDCheck BLE</strong><br><span class="price">~$40</span></td>
+    <td class="status-maybe">Probably</td>
+    <td>The tested reader's near-identical sibling: same hardware and radio,
+    older ELM327 command set that still covers everything HybridEdge uses.</td>
+  </tr>
+  <tr>
+    <td><strong>vLinker MC+</strong><br><span class="price">~$60</span></td>
+    <td class="status-maybe">Probably</td>
+    <td>Meets the spec on paper. Not yet verified in the field.</td>
+  </tr>
+  <tr>
+    <td><strong>Vgate iCar Pro Bluetooth&nbsp;4.0</strong><br><span class="price">~$35</span></td>
+    <td class="status-maybe">Probably</td>
+    <td>Meets the spec on paper. Not yet verified in the field.</td>
+  </tr>
+  <tr>
+    <td><strong>OBDLink CX</strong><br><span class="price">~$130</span></td>
+    <td class="status-maybe">Probably</td>
+    <td>Premium unit, meets the spec on paper. Not yet verified in the
+    field.</td>
+  </tr>
+  <tr>
+    <td><strong>PLX Kiwi 3</strong><br><span class="price">~$150</span></td>
+    <td class="status-maybe">Probably</td>
+    <td>Premium unit, meets the spec on paper. Not yet verified in the
+    field.</td>
+  </tr>
+  <tr>
+    <td><strong>Other BLE ELM327 readers</strong></td>
+    <td class="status-maybe">Probably</td>
+    <td>The listing should say Bluetooth Low Energy, BLE, or iOS support.
+    A version tip: genuine ELM327 firmware went 1.4, then 2.0 to 2.3.
+    Readers reporting "v1.5" are clones; many work fine for what HybridEdge
+    needs, but quality varies, and the app will tell you either way.</td>
+  </tr>
+  <tr>
+    <td><strong>OBDLink MX+</strong><br><span class="price">~$180</span></td>
+    <td class="status-no">Not compatible</td>
+    <td>A premium adapter, but it uses classic Bluetooth with Apple's
+    accessory certification, a different technology from the Bluetooth Low
+    Energy that HybridEdge speaks. Despite the "works with iPhone" label,
+    it won't connect to this app.</td>
+  </tr>
+  <tr>
+    <td><strong>Jaycar Response PP2145</strong><br><span class="price">~$30</span></td>
+    <td class="status-no">Not compatible</td>
+    <td>Tester-reported. Its OBD data runs over classic Bluetooth, which
+    iPhone apps cannot use; the app's compatibility check refuses it.</td>
+  </tr>
+  <tr>
+    <td><strong>Any Wi-Fi reader</strong></td>
+    <td class="status-no">Not compatible</td>
+    <td>HybridEdge connects over Bluetooth only.</td>
+  </tr>
+  <tr>
+    <td><strong>Any classic Bluetooth reader</strong></td>
+    <td class="status-no">Not compatible</td>
+    <td>Most bargain "Bluetooth ELM327" dongles are classic Bluetooth,
+    which iPhone apps cannot use. BLE only.</td>
+  </tr>
+</table>
+
+<p>Help grow the Confirmed list: when a reader connects, the app records
+which model and firmware it identified as. Drive once with your reader,
+then send a report from Settings &gt; Diagnostics, and your reader can be
+added to the table.</p>
 
 <h2>Where is the OBD port, and can a reader harm my car?</h2>
 <p>Look under the dash above the pedals, around the steering column; the
