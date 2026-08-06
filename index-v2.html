@@ -1,0 +1,531 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HybridEdge · Know what every drive really costs</title>
+<meta name="description" content="HybridEdge reads your plug-in hybrid's own data over an $11 OBD reader and prices every kilometre with your real electricity plan and petrol receipts. Australian made, in beta now.">
+<meta property="og:title" content="HybridEdge · Know what every drive really costs">
+<meta property="og:description" content="Measured from the car over an $11 OBD reader. Electric and petrol costs, priced with your actual rates.">
+<meta property="og:image" content="https://hybridedge.com.au/images/og-image.jpg">
+<link rel="icon" type="image/png" href="images/v2/app-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #08090B;
+  --card: #0D1116;
+  --card-2: #0F1418;
+  --hairline: rgba(255,255,255,.07);
+  --card-edge: rgba(255,255,255,.085);
+  --text: #FFFFFF;
+  --body-text: #C4C4C4;
+  --dim: #8B8B8B;
+  --faint: #777777;
+  --electric: #4aa3f0;
+  --petrol: #e0a63a;
+  --green: #2aa87e;
+  --sans: "Instrument Sans", -apple-system, system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--body-text);
+  font-family: var(--sans);
+  font-size: 16.5px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, p { text-wrap: pretty; }
+h1, h2, h3 { color: var(--text); }
+a { color: var(--green); text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { max-width: 100%; display: block; }
+
+.wrap { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+section { padding: 88px 0; border-bottom: 1px solid var(--hairline); }
+
+.eyebrow {
+  font-family: var(--mono); font-weight: 500; font-size: 11px;
+  letter-spacing: .16em; text-transform: uppercase; color: var(--dim);
+  display: flex; align-items: center; gap: 8px; margin-bottom: 18px;
+}
+.live-dot {
+  width: 6px; height: 6px; border-radius: 50%; background: var(--green);
+  animation: pulse 2.4s ease-in-out infinite;
+}
+@keyframes pulse { 0%,100% { opacity: 1 } 50% { opacity: .35 } }
+@media (prefers-reduced-motion: reduce) { .live-dot { animation: none } }
+
+/* ---------- header ---------- */
+header {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(8,9,11,.86);
+  border-bottom: 1px solid var(--hairline);
+}
+.nav {
+  display: flex; align-items: center; gap: 28px;
+  height: 64px; max-width: 1200px; margin: 0 auto; padding: 0 32px;
+}
+.brand { display: flex; align-items: center; gap: 10px; margin-right: auto; }
+.brand img.icon { width: 30px; height: 30px; border-radius: 7px; }
+.brand img.mark { height: 20px; width: auto; }
+.nav a.link { color: var(--body-text); font-size: 14.5px; font-weight: 500; }
+.nav a.link:hover { color: var(--text); text-decoration: none; }
+.pill {
+  background: var(--green); color: #04342C; font-weight: 600; font-size: 14.5px;
+  padding: 9px 18px; border-radius: 999px;
+}
+.pill:hover { text-decoration: none; filter: brightness(1.08); }
+@media (max-width: 720px) { .nav a.link { display: none } }
+
+/* ---------- hero ---------- */
+.hero {
+  padding: 96px 0;
+  background:
+    radial-gradient(56% 44% at 8% 96%, rgba(224,166,58,.075), transparent 70%),
+    radial-gradient(56% 44% at 94% 4%, rgba(74,163,240,.075), transparent 70%);
+}
+.hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 56px; align-items: center; }
+.hero h1 {
+  font-size: clamp(38px, 5vw, 62px); font-weight: 700;
+  letter-spacing: -.042em; line-height: 1.06; margin-bottom: 22px;
+}
+.hero p.lede { font-size: 18px; max-width: 34em; margin-bottom: 30px; }
+.ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 40px; }
+.btn-primary {
+  background: var(--green); color: #04342C; font-weight: 600; font-size: 16px;
+  padding: 14px 26px; border-radius: 999px;
+}
+.btn-primary:hover { text-decoration: none; filter: brightness(1.08); }
+.btn-ghost {
+  color: var(--text); font-weight: 500; font-size: 16px;
+  padding: 14px 26px; border-radius: 999px; border: 1px solid var(--card-edge);
+}
+.btn-ghost:hover { text-decoration: none; border-color: rgba(255,255,255,.2); }
+
+.split { max-width: 460px; }
+.split-caption {
+  font-family: var(--mono); font-size: 11px; letter-spacing: .16em;
+  text-transform: uppercase; color: var(--faint); margin-bottom: 10px;
+}
+.split-bar { display: flex; gap: 3px; height: 10px; margin-bottom: 10px; }
+.split-bar .ev { background: var(--electric); border-radius: 999px; width: 35%; }
+.split-bar .ice { background: var(--petrol); border-radius: 999px; width: 65%; }
+.split-legend { display: flex; justify-content: space-between; font-size: 13.5px; }
+.split-legend .ev { color: var(--electric); font-weight: 600; }
+.split-legend .ice { color: var(--petrol); font-weight: 600; }
+
+/* ---------- phone frame ---------- */
+.phone { position: relative; width: var(--w, 300px); margin: 0 auto; }
+.phone .screen-slot {
+  position: absolute;
+  left: calc(var(--w) * .10245 / 1.20593 * 1.20593); /* see derived note below */
+  top: 0;
+}
+/* Derived geometry (brief §6): for frame width F, screen inset x = F*.08496,
+   y = F*.09424; screen w = F*.82925; screen h = F*1.79827; radius = F*.11379.
+   We size the component by frame width F = --w for simplicity. */
+.phone .frame { position: relative; z-index: 2; width: 100%; height: auto; display: block; }
+.phone .shot {
+  position: absolute; z-index: 1;
+  left: 8.496%; top: 4.769%;
+  width: 82.925%; height: 90.963%;
+  object-fit: cover;
+  border-radius: calc(var(--w) * .11379);
+}
+.phone::after {
+  content: ""; position: absolute; z-index: 3; inset: 0; border-radius: 18%;
+  pointer-events: none;
+}
+
+/* ---------- statement band ---------- */
+.statement { padding: 76px 0; text-align: center; }
+.statement p {
+  font-size: clamp(26px, 3.4vw, 40px); font-weight: 600; color: var(--text);
+  letter-spacing: -.03em; line-height: 1.25; max-width: 22em; margin: 0 auto;
+}
+.statement .em { color: var(--green); }
+
+/* ---------- what it is ---------- */
+.cols { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+h2.section { font-size: clamp(30px, 3.4vw, 40px); font-weight: 700; letter-spacing: -.035em; line-height: 1.15; margin-bottom: 18px; }
+.photo-card { position: relative; border-radius: 24px; overflow: hidden; border: 1px solid var(--card-edge); }
+.photo-card img { width: 100%; }
+.photo-card .scrim {
+  position: absolute; inset: auto 0 0 0; padding: 44px 22px 16px;
+  background: linear-gradient(transparent, rgba(0,0,0,.82));
+}
+.photo-card .cap {
+  font-family: var(--mono); font-size: 11px; letter-spacing: .16em;
+  text-transform: uppercase; color: #cfcfcf;
+}
+
+/* ---------- accuracy ---------- */
+.tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin: 40px 0; }
+.tile {
+  background: linear-gradient(180deg, var(--card), var(--card-2));
+  border: 1px solid var(--card-edge); border-radius: 24px; padding: 26px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.05);
+}
+.tile .big { font-size: 44px; font-weight: 700; color: var(--text); letter-spacing: -.03em; line-height: 1; margin-bottom: 10px; }
+.tile p { font-size: 14.5px; color: var(--dim); }
+.tile.t-electric .big { color: var(--electric); }
+.tile.t-petrol .big { color: var(--petrol); }
+.tile.t-green .big { color: var(--green); }
+
+.proof { position: relative; border-radius: 28px; overflow: hidden; border: 1px solid var(--card-edge); }
+.proof img.photo { width: 100%; display: block; }
+.proof img.overlay {
+  /* Chroma rect measured from the photo (px 467-686 × 143-619 of 2172×724)
+     plus ~2px bleed past the anti-aliased green edge. */
+  position: absolute;
+  left: 21.35%; top: 19.47%;
+  width: 10.38%; height: 66.31%;
+  object-fit: cover;
+  border-radius: 15% / 7%;
+}
+.proof-caption {
+  font-family: var(--mono); font-size: 11px; letter-spacing: .16em;
+  text-transform: uppercase; color: var(--faint); margin-top: 14px;
+}
+
+/* ---------- carousel ---------- */
+.rail-head { display: flex; align-items: end; justify-content: space-between; margin-bottom: 34px; }
+.arrows { display: flex; gap: 10px; }
+.arrows button {
+  width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--card-edge);
+  background: var(--card); color: var(--text); font-size: 18px; cursor: pointer;
+}
+.arrows button:hover { border-color: rgba(255,255,255,.22); }
+.rail {
+  display: flex; gap: 24px; overflow-x: auto;
+  scroll-snap-type: x mandatory; scrollbar-width: none;
+  padding-bottom: 6px;
+}
+.rail::-webkit-scrollbar { display: none; }
+.slide {
+  flex: 0 0 636px; scroll-snap-align: start;
+  background: linear-gradient(180deg, var(--card), var(--card-2));
+  border: 1px solid var(--card-edge); border-radius: 28px;
+  padding: 28px; display: flex; gap: 26px; align-items: center;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.05);
+}
+.slide .phone { --w: 212px; flex: 0 0 212px; }
+.slide .num {
+  font-family: var(--mono); font-size: 11px; letter-spacing: .16em;
+  text-transform: uppercase; color: var(--faint); margin-bottom: 12px;
+}
+.slide h3 { font-size: 27px; font-weight: 700; letter-spacing: -.03em; line-height: 1.15; margin-bottom: 12px; }
+.slide p { font-size: 15px; }
+.slide .close { margin-top: 12px; font-weight: 600; font-size: 15px; }
+.close.c-electric { color: var(--electric); }
+.close.c-petrol { color: var(--petrol); }
+.close.c-green { color: var(--green); }
+@media (max-width: 720px) {
+  .slide { flex-basis: 86vw; flex-direction: column; align-items: flex-start; }
+  .slide .phone { align-self: center; }
+}
+
+/* ---------- privacy ---------- */
+.privacy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 36px; max-width: 640px; }
+.pcell {
+  background: linear-gradient(180deg, var(--card), var(--card-2));
+  border: 1px solid var(--card-edge); border-radius: 20px; padding: 22px;
+  font-weight: 600; color: var(--text); font-size: 16px;
+}
+
+/* ---------- CTA ---------- */
+.cta-band { padding: 96px 0; border-bottom: none; }
+.cta-panel {
+  background:
+    radial-gradient(60% 70% at 12% 100%, rgba(224,166,58,.10), transparent 70%),
+    radial-gradient(60% 70% at 88% 0%, rgba(74,163,240,.10), transparent 70%),
+    #0C1014;
+  border: 1px solid var(--card-edge); border-radius: 32px;
+  padding: 64px 40px; text-align: center;
+}
+.cta-panel h2 { margin-bottom: 14px; }
+.cta-panel p { max-width: 36em; margin: 0 auto 28px; }
+.cta-panel .note { font-size: 13px; color: var(--faint); margin: 18px auto 0; }
+
+/* ---------- footer ---------- */
+footer { padding: 44px 0 60px; }
+.foot { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+.foot .brand { margin-right: auto; }
+.foot a { color: var(--dim); font-size: 14px; }
+.foot .prov { width: 100%; margin-top: 14px; color: var(--faint); font-size: 13px; }
+
+@media (max-width: 900px) {
+  .hero-grid, .cols { grid-template-columns: 1fr; }
+  .tiles { grid-template-columns: 1fr; }
+  .hero { padding: 64px 0; }
+  section { padding: 64px 0; }
+  .privacy-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="fg1" x1="47.87" y1="1062.79" x2="1021.22" y2="1062.79" gradientUnits="userSpaceOnUse">
+      <stop offset=".27" stop-color="#ec9051"/><stop offset=".54" stop-color="#ec9051"/>
+      <stop offset=".57" stop-color="#ee9151"/><stop offset=".73" stop-color="#f59653"/>
+    </linearGradient>
+    <linearGradient id="fg2" x1="1021.48" y1="802.85" x2="1030.32" y2="802.85" gradientTransform="translate(2051.803 1605.7) rotate(-180)" gradientUnits="userSpaceOnUse">
+      <stop offset=".28" stop-color="#a3551f"/><stop offset=".49" stop-color="#c77a43"/><stop offset=".73" stop-color="#eca068"/>
+    </linearGradient>
+    <linearGradient id="fg3" x1="39.68" y1="898.71" x2="48.52" y2="898.71" gradientTransform="translate(88.197 1797.415) rotate(-180)" gradientUnits="userSpaceOnUse">
+      <stop offset=".27" stop-color="#eca068"/><stop offset=".51" stop-color="#c77a43"/><stop offset=".72" stop-color="#a3551f"/>
+    </linearGradient>
+    <linearGradient id="fg4" x1="39.68" y1="706.65" x2="48.52" y2="706.65" gradientTransform="translate(88.197 1413.2916) rotate(-180)" xlink:href="#fg3"/>
+    <linearGradient id="fg5" x1="39.68" y1="513.2" x2="48.52" y2="513.2" gradientTransform="translate(88.197 1026.3946) rotate(-180)" xlink:href="#fg3"/>
+    <symbol id="iframe17" viewBox="0 0 1070 2115">
+      <path fill="url(#fg1)" d="M866.56,2068.27H202.53c-20.87,0-41.13-4.09-60.21-12.16-18.42-7.79-34.96-18.94-49.16-33.14-14.2-14.2-25.35-30.74-33.14-49.16-8.07-19.08-12.16-39.33-12.16-60.21V211.96c0-20.87,4.09-41.13,12.16-60.21,7.79-18.42,18.94-34.96,33.14-49.16,14.2-14.2,30.74-25.35,49.16-33.14,19.08-8.07,39.33-12.16,60.21-12.16h664.03c20.87,0,41.13,4.09,60.21,12.16,18.42,7.79,34.96,18.94,49.16,33.14,14.2,14.2,25.35,30.74,33.14,49.16,8.07,19.08,12.16,39.33,12.16,60.21v1701.65c0,20.87-4.09,41.13-12.16,60.21-7.79,18.42-18.94,34.96-33.14,49.16-14.2,14.2-30.74,25.35-49.16,33.14-19.08,8.07-39.33,12.16-60.21,12.16ZM202.53,87.33c-68.72,0-124.63,55.91-124.63,124.63v1701.65c0,68.72,55.91,124.63,124.63,124.63h664.03c68.72,0,124.63-55.91,124.63-124.63V211.96c0-68.72-55.91-124.63-124.63-124.63H202.53Z"/>
+      <path fill="#232323" d="M856.44,2054.75H212.65c-20.48,0-40.36-4.02-59.08-11.93-18.08-7.65-34.31-18.59-48.24-32.52-13.93-13.93-24.88-30.17-32.52-48.24-7.92-18.72-11.93-38.6-11.93-59.08V222.6c0-20.48,4.02-40.36,11.93-59.09,7.65-18.08,18.59-34.31,32.52-48.24,13.93-13.93,30.17-24.88,48.24-32.52,18.72-7.92,38.6-11.93,59.08-11.93h643.79c20.48,0,40.36,4.02,59.08,11.93,18.08,7.65,34.31,18.59,48.24,32.52,13.93,13.93,24.88,30.17,32.52,48.24,7.92,18.72,11.93,38.6,11.93,59.09v1680.37c0,20.48-4.02,40.36-11.93,59.08-7.65,18.08-18.59,34.31-32.52,48.24-13.93,13.93-30.17,24.88-48.24,32.52-18.72,7.92-38.6,11.93-59.08,11.93ZM212.65,100.85c-67.13,0-121.75,54.62-121.75,121.75v1680.37c0,67.13,54.62,121.75,121.75,121.75h643.79c67.13,0,121.75-54.62,121.75-121.75V222.6c0-67.13-54.62-121.75-121.75-121.75H212.65Z"/>
+      <path fill="url(#fg2)" d="M1030.32,680.3h0v245.1h0c-4.88,0-8.84-3.96-8.84-8.84v-227.42c0-4.88,3.96-8.84,8.84-8.84Z" transform="translate(2051.803 1605.7) rotate(-180)"/>
+      <path fill="url(#fg3)" d="M39.68,822.96h0c4.88,0,8.84,3.96,8.84,8.84v133.82c0,4.88-3.96,8.84-8.84,8.84h0v-151.5h0Z" transform="translate(88.197 1797.415) rotate(-180)"/>
+      <path fill="url(#fg4)" d="M39.68,630.9h0c4.88,0,8.84,3.96,8.84,8.84v133.82c0,4.88-3.96,8.84-8.84,8.84h0v-151.5h0Z" transform="translate(88.197 1413.2916) rotate(-180)"/>
+      <path fill="url(#fg5)" d="M39.68,468.13h0c4.88,0,8.84,3.96,8.84,8.84v72.46c0,4.88-3.96,8.84-8.84,8.84h0v-90.14h0Z" transform="translate(88.197 1026.3946) rotate(-180)"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header>
+  <nav class="nav">
+    <a class="brand" href="#top" aria-label="HybridEdge home">
+      <img class="icon" src="images/v2/app-icon.png" alt="">
+      <img class="mark" src="images/v2/wordmark-dark.png" alt="HybridEdge">
+    </a>
+    <a class="link" href="#what">What it does</a>
+    <a class="link" href="#accuracy">Accuracy</a>
+    <a class="link" href="#privacy">Privacy</a>
+    <a class="link" href="faq.html">FAQ</a>
+    <a class="pill" href="mailto:support@hybridedge.com.au?subject=HybridEdge%20beta">Join the beta</a>
+  </nav>
+</header>
+
+<section class="hero" id="top" style="border-bottom: 1px solid var(--hairline)">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow"><span class="live-dot"></span> In beta with Australian PHEV owners</p>
+      <h1>Your trip computer will not tell you what a drive costs.</h1>
+      <p class="lede">HybridEdge reads your plug-in hybrid's own data over an $11 OBD reader, prices every kilometre with your electricity plan and your petrol receipts, and shows what each drive really cost. In dollars.</p>
+      <div class="ctas">
+        <a class="btn-primary" href="mailto:support@hybridedge.com.au?subject=HybridEdge%20beta">Ask for a beta invite</a>
+        <a class="btn-ghost" href="#accuracy">See how it measures</a>
+      </div>
+      <div class="split">
+        <p class="split-caption">One owner's last 30 days · measured</p>
+        <div class="split-bar"><span class="ev"></span><span class="ice"></span></div>
+        <div class="split-legend">
+          <span class="ev">Pure-EV 35% · $30.03</span>
+          <span class="ice">Engine on 65% · $89.28</span>
+        </div>
+      </div>
+    </div>
+    <div class="phone" style="--w: 320px">
+      <img class="shot" src="images/v2/dashboard-640.jpg" alt="HybridEdge dashboard showing $17.07 per 100 km over 30 days, with electric and petrol cost split">
+      <svg class="frame" viewBox="0 0 1070 2115" role="img" aria-label="iPhone frame"><use href="#iframe17"/></svg>
+    </div>
+  </div>
+</section>
+
+<section class="statement">
+  <div class="wrap">
+    <p>Every number in the app is <span class="em">measured from the car</span>, or it is not shown.</p>
+  </div>
+</section>
+
+<section id="what">
+  <div class="wrap cols">
+    <div>
+      <p class="eyebrow">What it is</p>
+      <h2 class="section">The dash shows kilowatt-hours. Your bills arrive in dollars.</h2>
+      <p style="margin-bottom: 16px">A plug-in hybrid runs on two fuels with two prices, and the car never joins them up. Efficiency screens show energy, range guesses drift, and nobody can tell you whether yesterday's commute cost two dollars or ten.</p>
+      <p>HybridEdge joins them up. A small Bluetooth OBD reader plugs into the diagnostic port every car has, and the app reads the same live figures a workshop scan tool reads: battery level, fuel level, speed, odometer. It prices the electric kilometres with your actual electricity plan, the petrol kilometres with your actual receipts, and keeps the whole history on your phone.</p>
+    </div>
+    <div class="photo-card">
+      <img src="images/v2/dongle-under-dash.jpg" alt="A Bluetooth OBD reader plugged into the diagnostic port under a car's dash">
+      <div class="scrim"><p class="cap">The hardware: an $11 reader in the port every car since 1996 has</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="accuracy">
+  <div class="wrap">
+    <p class="eyebrow">Accuracy</p>
+    <h2 class="section">Checked against the dash, not against a brochure.</h2>
+    <p style="max-width: 44em">The app's readings are validated against the car's own instruments, photo by photo, before they are shown as truth. When the app has not verified a number for your exact model yet, it says so and asks you to read the dash while it learns.</p>
+    <div class="tiles">
+      <div class="tile t-electric">
+        <div class="big">0.3%</div>
+        <p>How far the app's battery reading sat from the dash at full charge on the reference car, validated with photographs across the whole battery range.</p>
+      </div>
+      <div class="tile t-green">
+        <div class="big">±2%</div>
+        <p>Measured usable battery capacity agrees with the manufacturer's own cloud data to within two percent. The brochure figure was 10% off.</p>
+      </div>
+      <div class="tile t-petrol">
+        <div class="big">127</div>
+        <p>Real captured car responses are replayed through the test suite before every single release. If a decode drifts, the build fails.</p>
+      </div>
+    </div>
+    <div class="proof">
+      <img class="photo" src="images/v2/dash-proof.jpg" alt="A phone running HybridEdge held in front of a Denza instrument cluster">
+      <img class="overlay" src="images/v2/dashboard-640.jpg" alt="">
+    </div>
+    <p class="proof-caption">The cluster reads 18.5 kWh/100 km. It cannot read your power bill. The app prices the same drive at $17.07/100 km.</p>
+  </div>
+</section>
+
+<section id="features">
+  <div class="wrap">
+    <div class="rail-head">
+      <div>
+        <p class="eyebrow">Features</p>
+        <h2 class="section" style="margin-bottom: 0">What it measures.</h2>
+      </div>
+      <div class="arrows">
+        <button type="button" aria-label="Previous" onclick="document.getElementById('rail').scrollBy({left:-660,behavior:'smooth'})">&#8592;</button>
+        <button type="button" aria-label="Next" onclick="document.getElementById('rail').scrollBy({left:660,behavior:'smooth'})">&#8594;</button>
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="rail" id="rail">
+      <div class="slide">
+        <div class="phone">
+          <img class="shot" src="images/v2/cockpit-640.jpg" alt="Live cockpit view with battery and fuel dials">
+          <svg class="frame" viewBox="0 0 1070 2115" aria-hidden="true"><use href="#iframe17"/></svg>
+        </div>
+        <div>
+          <p class="num">01 · Live capture</p>
+          <h3>Watch the drive as it happens.</h3>
+          <p>Battery, fuel, speed, and which energy source is doing the work right now, live from the car while you drive. CarPlay included.</p>
+          <p class="close c-electric">Measured values only. When the reader is off, the dials say so.</p>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="phone">
+          <img class="shot" src="images/v2/cost-breakdown-640.jpg" alt="Cost breakdown screen">
+          <svg class="frame" viewBox="0 0 1070 2115" aria-hidden="true"><use href="#iframe17"/></svg>
+        </div>
+        <div>
+          <p class="num">02 · True cost</p>
+          <h3>Every trip in dollars, split by fuel.</h3>
+          <p>Electric cost, petrol cost, and the combined per-100 km figure for each drive, each week, and each month. Compared honestly against what a petrol or diesel car would have cost.</p>
+          <p class="close c-green">$17.07/100 km is a real 30-day figure, not a brochure one.</p>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="phone">
+          <img class="shot" src="images/v2/energy-plan-picker-640.jpg" alt="Electricity plan picker">
+          <svg class="frame" viewBox="0 0 1070 2115" aria-hidden="true"><use href="#iframe17"/></svg>
+        </div>
+        <div>
+          <p class="num">03 · Your real tariff</p>
+          <h3>Charges priced by your actual plan.</h3>
+          <p>Pick your electricity plan from 165 real Australian tariffs sourced from the government's own data, free windows and time-of-use included. A midnight charge and a peak-hour charge cost different money, and the app knows.</p>
+          <p class="close c-electric">Solar counts as free. Free windows count as free.</p>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="phone">
+          <img class="shot" src="images/v2/refuel-sheet-640.jpg" alt="Refuel entry with receipt scanning">
+          <svg class="frame" viewBox="0 0 1070 2115" aria-hidden="true"><use href="#iframe17"/></svg>
+        </div>
+        <div>
+          <p class="num">04 · Receipt scanning</p>
+          <h3>Point the camera at the bowser.</h3>
+          <p>Litres and price read straight off the pump or receipt. Charging sessions scan too, from a screenshot of your charger's app.</p>
+          <p class="close c-petrol">Typos get caught. 5,290 litres does not fit in your tank.</p>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="phone">
+          <img class="shot" src="images/v2/logbook-640.jpg" alt="Trip logbook">
+          <svg class="frame" viewBox="0 0 1070 2115" aria-hidden="true"><use href="#iframe17"/></svg>
+        </div>
+        <div>
+          <p class="num">05 · Logbook</p>
+          <h3>A logbook that holds up at tax time.</h3>
+          <p>Every trip with odometer readings, places, and costs. Swipe to tag business or private, export a clean CSV for your accountant with the business-use percentage computed.</p>
+          <p class="close c-green">Records tool, not tax advice. Your accountant gets real data.</p>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="phone">
+          <img class="shot" src="images/v2/garage-640.jpg" alt="Garage with vehicle specifications">
+          <svg class="frame" viewBox="0 0 1070 2115" aria-hidden="true"><use href="#iframe17"/></svg>
+        </div>
+        <div>
+          <p class="num">06 · PHEV database</p>
+          <h3>84 Australian PHEVs, specs curated.</h3>
+          <p>Battery sizes, tank capacities, and consumption figures for the plug-in hybrids actually sold here, kept current without app updates. Multiple cars per household supported.</p>
+          <p class="close c-electric">Your model missing? It gets added on request.</p>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="phone">
+          <img class="shot" src="images/v2/energy-log-640.jpg" alt="Energy log of charges and fills">
+          <svg class="frame" viewBox="0 0 1070 2115" aria-hidden="true"><use href="#iframe17"/></svg>
+        </div>
+        <div>
+          <p class="num">07 · Energy ledger</p>
+          <h3>Every charge and every fill, one ledger.</h3>
+          <p>Charges and refuels sit in one editable history, so the cost basis behind every trip is visible and correctable. Mistype a charge and you can fix it later without breaking the maths.</p>
+          <p class="close c-petrol">The numbers stay honest because the inputs stay editable.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="privacy">
+  <div class="wrap">
+    <p class="eyebrow">Privacy</p>
+    <h2 class="section">Nothing to sign up to.</h2>
+    <p style="max-width: 42em">There is no account and no server. Your trips, costs, and locations stay on your phone. The one optional share is a handful of anonymous calibration numbers that make the app accurate for other owners of your model, and the app asks you about it plainly during setup. The <a href="privacy.html">privacy policy</a> is short because there is so little to say.</p>
+    <div class="privacy-grid">
+      <div class="pcell">No accounts</div>
+      <div class="pcell">No analytics</div>
+      <div class="pcell">No ads, ever</div>
+      <div class="pcell">Trips never leave your phone</div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <div class="cta-panel">
+      <p class="eyebrow" style="justify-content: center"><span class="live-dot"></span> Beta open now</p>
+      <h2 class="section">Drive a PHEV? Help measure it.</h2>
+      <p>HybridEdge was developed and validated on the Denza B5, and testing is rolling out across the BYD Shark 6, Denza B8, and a growing list of models through the same measure-everything process. All you need is an iPhone, your car, and an $11 reader.</p>
+      <a class="btn-primary" href="mailto:support@hybridedge.com.au?subject=HybridEdge%20beta">Ask for a beta invite</a>
+      <p class="note">BYD and Denza owners get priority while calibration for those models matures.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <a class="brand" href="#top">
+      <img class="icon" src="images/v2/app-icon.png" alt="" style="width:26px;height:26px">
+      <img class="mark" src="images/v2/wordmark-dark.png" alt="HybridEdge" style="height:17px">
+    </a>
+    <a href="faq.html">FAQ</a>
+    <a href="support.html">Support</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+    <a href="https://www.facebook.com/HybridEdgeApp/">Facebook</a>
+    <p class="prov">Made in Australia by one PHEV owner who wanted real numbers. Every figure on this page comes from the app measuring an actual car.</p>
+  </div>
+</footer>
+
+</body>
+</html>
