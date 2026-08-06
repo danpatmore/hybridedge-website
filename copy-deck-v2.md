@@ -10,10 +10,10 @@ go, write REMOVE under its label.
 In beta with Australian PHEV owners
 
 **Headline**
-Your trip computer will not tell you what a drive costs.
+Your trip computer can't tell you how much a drive costs.
 
 **Lead paragraph**
-HybridEdge reads your plug-in hybrid's own data over an $11 OBD reader, prices every kilometre with your electricity plan and your petrol receipts, and shows what each drive really cost. In dollars.
+HybridEdge reads your plug-in hybrid's own data over an $11 OBD reader, prices every kilometre with your electricity plan and your petrol receipts, and shows what each drive really cost.
 
 **Button 1**
 Ask for a beta invite
