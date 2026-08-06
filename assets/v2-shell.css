@@ -1,0 +1,121 @@
+/* HybridEdge site shell v2 — shared by the subpages (FAQ, Support,
+   Privacy, Terms). Matches the index-v2 homepage: same tokens, header,
+   footer, and type scale. Long-form text sits in a single 680px measure
+   per the website brief. */
+
+:root {
+  --bg: #08090B;
+  --card: #0D1116;
+  --card-2: #0F1418;
+  --hairline: rgba(255,255,255,.07);
+  --card-edge: rgba(255,255,255,.085);
+  --text: #FFFFFF;
+  --body-text: #C4C4C4;
+  --dim: #8B8B8B;
+  --faint: #777777;
+  --electric: #4aa3f0;
+  --petrol: #e0a63a;
+  --green: #2aa87e;
+  --alert: #e0655a;
+  --sans: "Instrument Sans", -apple-system, system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--body-text);
+  font-family: var(--sans);
+  font-size: 16.5px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, p, li, dt, dd { text-wrap: pretty; }
+h1, h2, h3 { color: var(--text); }
+a { color: var(--green); text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { max-width: 100%; display: block; }
+
+/* ---------- header (same as homepage) ---------- */
+header.site {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(8,9,11,.86);
+  border-bottom: 1px solid var(--hairline);
+}
+.nav {
+  display: flex; align-items: center; gap: 28px;
+  height: 64px; max-width: 1200px; margin: 0 auto; padding: 0 32px;
+}
+.brand { display: flex; align-items: center; gap: 10px; margin-right: auto; }
+.brand img.icon { width: 30px; height: 30px; border-radius: 7px; }
+.brand img.mark { height: 20px; width: auto; }
+.nav a.link { color: var(--body-text); font-size: 14.5px; font-weight: 500; }
+.nav a.link:hover { color: var(--text); text-decoration: none; }
+.nav a.link.current { color: var(--green); }
+.pill {
+  background: var(--green); color: #04342C; font-weight: 600; font-size: 14.5px;
+  padding: 9px 18px; border-radius: 999px;
+}
+.pill:hover { text-decoration: none; filter: brightness(1.08); }
+@media (max-width: 720px) { .nav a.link { display: none } }
+
+/* ---------- long-form article ---------- */
+main.measure { max-width: 680px; margin: 0 auto; padding: 72px 24px 88px; }
+main.measure h1 {
+  font-size: clamp(32px, 5vw, 44px); font-weight: 700;
+  letter-spacing: -.035em; line-height: 1.1; margin-bottom: 10px;
+}
+.updated {
+  font-family: var(--mono); font-weight: 500; font-size: 11px;
+  letter-spacing: .16em; text-transform: uppercase; color: var(--faint);
+  margin-bottom: 26px;
+}
+main.measure h2 {
+  font-size: 20px; font-weight: 600; letter-spacing: -.02em;
+  margin: 40px 0 10px;
+}
+main.measure p { margin-bottom: 14px; }
+main.measure dt { font-weight: 600; color: var(--text); margin-top: 22px; }
+main.measure dd { margin: 4px 0 0 0; }
+
+.summary {
+  background: linear-gradient(180deg, var(--card), var(--card-2));
+  border: 1px solid var(--card-edge); border-radius: 20px;
+  padding: 20px 24px; margin: 26px 0;
+  color: var(--text); font-weight: 500;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.05);
+}
+
+/* ---------- reader table (FAQ) ---------- */
+table.readers { width: 100%; border-collapse: collapse; font-size: 14.5px; margin: 16px 0; }
+table.readers th {
+  font-family: var(--mono); font-weight: 500; font-size: 11px;
+  letter-spacing: .16em; text-transform: uppercase; color: var(--faint);
+}
+table.readers th, table.readers td {
+  text-align: left; padding: 12px 10px; vertical-align: top;
+  border-bottom: 1px solid var(--hairline);
+}
+table.readers strong { color: var(--text); }
+.status-yes   { color: var(--green); font-weight: 600; white-space: nowrap; }
+.status-maybe { color: var(--petrol); font-weight: 600; white-space: nowrap; }
+.status-no    { color: var(--alert); font-weight: 600; white-space: nowrap; }
+.price { font-size: 13px; color: var(--faint); }
+.table-scroll { overflow-x: auto; }
+
+/* ---------- footer (same as homepage) ---------- */
+footer.site { border-top: 1px solid var(--hairline); padding: 44px 0 60px; }
+.foot {
+  display: flex; align-items: center; gap: 24px; flex-wrap: wrap;
+  max-width: 1200px; margin: 0 auto; padding: 0 32px;
+}
+.foot .brand { margin-right: auto; }
+.foot a { color: var(--dim); font-size: 14px; }
+.foot .prov { width: 100%; margin-top: 14px; color: var(--faint); font-size: 13px; }
+
+/* Support page callout — same surface as .summary */
+.card {
+  background: linear-gradient(180deg, var(--card), var(--card-2));
+  border: 1px solid var(--card-edge); border-radius: 20px;
+  padding: 20px 24px; margin: 26px 0;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.05);
+}
