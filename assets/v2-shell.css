@@ -103,6 +103,11 @@ table.readers strong { color: var(--text); }
 .status-maybe { color: var(--petrol); font-weight: 600; white-space: nowrap; }
 .status-no    { color: var(--alert); font-weight: 600; white-space: nowrap; }
 .price { font-size: 13px; color: var(--faint); }
+.readers .rcell { display: flex; align-items: center; gap: 12px; }
+.readers .rpic {
+  width: 46px; height: 46px; flex: 0 0 46px; object-fit: contain;
+  background: #fff; border-radius: 9px; padding: 3px; box-sizing: border-box;
+}
 .table-scroll { overflow-x: auto; }
 
 /* ---------- footer (same as homepage) ---------- */
