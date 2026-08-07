@@ -13,7 +13,7 @@ Currently in development with Australian PHEV owners
 Your trip computer can't tell you how much a drive costs.
 
 **Lead paragraph**
-HybridEdge reads your plug-in hybrid's own data over an $11 OBD reader\*, prices every kilometre with your electricity plan and your petrol receipts, and shows what each drive really cost.
+HybridEdge reads your plug-in hybrid's own data over a ~$50 OBD reader\*, prices every kilometre with your electricity plan and your petrol receipts, and shows what each drive really cost.
 
 **Lead footnote** (small print under the hero; "the FAQ" links to the adapter list)
 \*One of the currently compatible readers. See the FAQ for the adapters we have tested.
@@ -172,7 +172,7 @@ Beta open now
 Drive a PHEV? Help measure it.
 
 **Paragraph**
-HybridEdge was developed and validated on the Denza B5, and testing is rolling out across the BYD Shark 6, Denza B8, and a growing list of models through the same measure-everything process. All you need is an iPhone, your car, and an $11 reader.
+HybridEdge was developed and validated on the Denza B5, and testing is rolling out across the BYD Shark 6, Denza B8, and a growing list of models through the same measure-everything process. All you need is an iPhone, your car, and a ~$50 reader.
 
 **Button**
 Ask for a beta invite
