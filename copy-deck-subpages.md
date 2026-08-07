@@ -88,13 +88,13 @@ Help grow the Confirmed list: when a reader connects, the app records which mode
 Look under the dash above the pedals, around the steering column; the socket faces the floor. It's a 16-pin trapezoid about the size of a matchbox, and some cars hide it behind a small flip-down cover. The reader stays plugged in permanently.
 
 **Paragraph 2**
-The port is designed for exactly this kind of accessory. HybridEdge only asks the standard read-only questions a mechanic's scan tool asks (battery level, fuel level, odometer, and speed). It cannot change settings, clear fault codes, or modify your car in any way. That said, OBD readers are third-party hardware, so if you're unsure how an accessory sits with your warranty or insurance, ask your dealer before plugging one in.
+The port is designed for exactly this kind of accessory. HybridEdge only asks read-only questions the same way a mechanic's scan tool does (battery level, fuel level, odometer, and speed). It cannot change settings, clear fault codes, or modify your car in any way. That said, OBD readers are third-party hardware, so if you're unsure how an accessory sits with your warranty or insurance, ask your dealer before plugging one in.
 
 
 ## What about my data and privacy?
 
 **Paragraph 1**
-There's no account and no sign-up because there's nothing to sign up to. There are no ads either, and there never will be. Your trips, costs, and locations are stored only on your phone. The app makes one kind of network request on its own, downloading a public list of vehicle specifications, and it contains nothing about you. One more is your choice, asked plainly during setup: sharing anonymous calibration results (your car's model and the fitted numbers, never your trips or identity) so the app gets accurate for other owners of your model. It's preselected because the whole fleet benefits, and one tap turns it off. The full detail is in the privacy policy; it's short because there's so little to say.
+There's no account and no sign-up because there's nothing to sign up to. There are no ads either, and there never will be. Your trips, costs, and locations are stored only on your phone. The app makes one periodic network request to download a public list of vehicle specifications, and it contains nothing about you. One more is optional, prompted during setup: the app asks to share anonymous calibration results (your car's model and the fitted numbers, never your trips or identity) so it can build accuracy for other owners of your make and model. It's preselected because the whole fleet benefits, and one tap turns it off. The full detail is in the privacy policy; it's short because there's so little to say.
 
 
 ## What iPhone do I need?
