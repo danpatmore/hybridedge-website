@@ -157,7 +157,7 @@ HybridEdge: real running costs for your plug-in hybrid.
 Do I need an OBD reader?
 
 **Answer**
-No. You can log trips by typing three numbers from your dashboard at the start and end. A Bluetooth OBD-II reader (about $50; we test with the Veepeak OBDCheck BLE+) makes logging near-automatic: the app reads battery, fuel, and odometer itself, and prompts you at ignition on and off.
+No. You can log trips by typing three numbers from your dashboard at the start and end. A Bluetooth OBD-II reader (from as little as $11; we test with the Veepeak OBDCheck BLE+ which costs about $50) makes logging near-automatic: the app reads battery, fuel, and odometer itself, and prompts you at ignition on and off.
 
 **Question**
 Where is the OBD port in my car?
@@ -181,7 +181,7 @@ On your phone, full stop. No accounts, no cloud, no analytics. See the privacy p
 My car isn't in the vehicle list.
 
 **Answer**
-The list updates over the air, so new PHEVs appear without an app update. Meanwhile, enter your battery (usable kWh) and tank size from the owner's manual; the app labels unverified specs honestly until they're confirmed. Email us your make and model and we'll add it to the database.
+The list updates over the air, so new PHEVs appear without an app update shortly after they hit the roads. Send an email to support@hybridedge.com.au if you can't find yours and we'll add it.  Meanwhile, enter your battery (usable kWh) and tank size from the owner's manual; the app labels unverified specs honestly until they're confirmed. Email us your make and model and we'll add it to the database.
 
 **Question**
 Something doesn't match my dash.
