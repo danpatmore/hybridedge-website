@@ -61,7 +61,7 @@ OBDLink CX ~$130 | Probably | Premium unit, meets the spec on paper. Not yet ver
 PLX Kiwi 3 ~$150 | Probably | Premium unit, meets the spec on paper. Not yet verified in the field.
 
 **Table row: Other BLE ELM327 readers**
-Other BLE ELM327 readers | Probably | The listing should say Bluetooth Low Energy, BLE, or iOS support. A version tip: genuine ELM327 firmware went 1.4, then 2.0 to 2.3. Readers reporting "v1.5" are clones; many work fine for what HybridEdge needs, but quality varies, and the app will tell you either way.
+Other BLE ELM327 readers | Probably | Reading the listing: "Android only", "Symbian", or "PPC" means classic Bluetooth, which iPhones cannot use at all. "iOS", "iPhone", "BLE", or "Bluetooth 4.0/5.0" means the right radio, and the reader will connect. What no listing tells you is the firmware inside: genuine ELM327 firmware went 1.4, then 2.0 to 2.3, and readers reporting "v1.5" are clones. Some v1.5 clones work; we have field-tested one that connects fine but cannot read hybrid data at all.
 
 **Table row: Generic "ELM327 mini" Bluetooth OBD2 (Amazon)**
 Generic "ELM327 mini" Bluetooth OBD2 (Amazon) ~$11 | Mixed | A firmware lottery: two units from the same listing shipped different chips. One (ELM327 v2.1 firmware) works fully, field-confirmed on a BYD Shark 6. Another (v1.5 clone firmware) connects and reads speed and odometer but returns no battery or fuel data at all, field-tested on a Denza B5. If your unit reports v1.5, expect missing data.
