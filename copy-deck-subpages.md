@@ -34,7 +34,7 @@ HybridEdge was developed and validated on the BYD Denza B5, with its measurement
 ## Do I need to buy anything?
 
 **Paragraph 1**
-No. Every core feature works with manual entry: tap Start trip, type the odometer, fuel, and battery figures off your dash, then end the trip the same way. All costs, the logbook, and insights work from that. If you want the car to fill the numbers in itself, a Bluetooth OBD-II reader from as little as $11 (we test with the Veepeak OBDCheck BLE+) plugs into the port under the steering wheel, and the app records battery, fuel, odometer, and speed continuously while you drive.
+No. Every core feature works with manual entry: tap Start trip, type the odometer, fuel, and battery figures off your dash, then end the trip the same way. All costs, the logbook, and insights work from that. If you want the car to fill the numbers in itself, a ~$50 Bluetooth OBD-II reader (we test with the Veepeak OBDCheck BLE+) plugs into the port under the steering wheel, and the app records battery, fuel, odometer, and speed continuously while you drive.
 
 
 ## Which OBD readers are compatible?
@@ -160,7 +160,7 @@ HybridEdge: real running costs for your plug-in hybrid.
 Do I need an OBD reader?
 
 **Answer**
-No. You can log trips by typing three numbers from your dashboard at the start and end. A Bluetooth OBD-II reader (from as little as $11; we test with the Veepeak OBDCheck BLE+ which costs about $50) makes logging near-automatic: the app reads battery, fuel, and odometer itself, and prompts you at ignition on and off.
+No. You can log trips by typing three numbers from your dashboard at the start and end. A Bluetooth OBD-II reader (about $50; we test with the Veepeak OBDCheck BLE+) makes logging near-automatic: the app reads battery, fuel, and odometer itself, and prompts you at ignition on and off.
 
 **Question**
 Where is the OBD port in my car?
