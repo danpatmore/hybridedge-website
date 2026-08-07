@@ -13,7 +13,10 @@ Currently in development with Australian PHEV owners
 Your trip computer can't tell you how much a drive costs.
 
 **Lead paragraph**
-HybridEdge reads your plug-in hybrid's own data over an $11 OBD reader, prices every kilometre with your electricity plan and your petrol receipts, and shows what each drive really cost.
+HybridEdge reads your plug-in hybrid's own data over an $11 OBD reader\*, prices every kilometre with your electricity plan and your petrol receipts, and shows what each drive really cost.
+
+**Lead footnote** (small print under the hero; "the FAQ" links to the adapter list)
+\*One of the currently compatible readers. See the FAQ for the adapters we have tested.
 
 **Button 1**
 Ask for a beta invite
@@ -27,7 +30,7 @@ See how it measures
 ## Statement band
 
 **Statement** (the green emphasis is on "measured from the car")
-Every figure in the app is measured directly from the car, or it is not shown.
+Every number in the app is measured directly from the car, or it is not shown.
 
 ## What it is
 

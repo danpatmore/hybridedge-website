@@ -116,6 +116,8 @@ header {
 .split-bar .ev { background: var(--electric); border-radius: 999px; width: 35%; }
 .split-bar .ice { background: var(--petrol); border-radius: 999px; width: 65%; }
 .split-legend { display: flex; justify-content: space-between; font-size: 13.5px; }
+.hero-fn { font-size: 13px; color: var(--faint); margin-top: 20px; }
+.hero-fn a { color: var(--faint); text-underline-offset: 3px; }
 .split-legend .ev { color: var(--electric); font-weight: 600; }
 .split-legend .ice { color: var(--petrol); font-weight: 600; }
 
@@ -314,7 +316,7 @@ footer { padding: 44px 0 60px; }
     <div>
       <p class="eyebrow"><span class="live-dot"></span> Currently in development with Australian PHEV owners</p>
       <h1>Your trip computer can't tell you how much a drive costs.</h1>
-      <p class="lede">HybridEdge reads your plug-in hybrid's own data over an $11 OBD reader, prices every kilometre with your electricity plan and your petrol receipts, and shows what each drive really cost.</p>
+      <p class="lede">HybridEdge reads your plug-in hybrid's own data over an $11 OBD reader*, prices every kilometre with your electricity plan and your petrol receipts, and shows what each drive really cost.</p>
       <div class="ctas">
         <a class="btn-primary" href="mailto:support@hybridedge.com.au?subject=HybridEdge%20beta">Ask for a beta invite</a>
         <a class="btn-ghost" href="#accuracy">See how it measures</a>
@@ -326,6 +328,7 @@ footer { padding: 44px 0 60px; }
           <span class="ice">Engine on 65% · $89.28</span>
         </div>
       </div>
+      <p class="hero-fn">*One of the currently compatible readers. See <a href="faq.html">the FAQ</a> for the adapters we have tested.</p>
     </div>
     <div class="phone" style="--w: 320px">
       <img class="shot" src="images/v2/dashboard-640.jpg" alt="HybridEdge dashboard showing $17.07 per 100 km over 30 days, with electric and petrol cost split">
@@ -336,7 +339,7 @@ footer { padding: 44px 0 60px; }
 
 <section class="statement">
   <div class="wrap">
-    <p>Every figure in the app is <span class="em">measured directly from the car</span>, or it is not shown.</p>
+    <p>Every number in the app is <span class="em">measured directly from the car</span>, or it is not shown.</p>
   </div>
 </section>
 
