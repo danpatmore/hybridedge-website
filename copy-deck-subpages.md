@@ -13,7 +13,10 @@ Frequently asked questions
 HybridEdge beta · Updated 29 July 2026
 
 **Summary box**
-The short version: HybridEdge measures what your plug-in hybrid really costs to run, petrol and electricity together. No account, no ads, nothing leaves your phone, and you don't need any hardware to use it.
+The short version: HybridEdge measures what powering your plug-in hybrid really costs, petrol and electricity together. No account, no ads, nothing leaves your phone\*, and you don't need any hardware to use it.
+
+**Summary footnote** (small grey text under the summary box)
+\*If you agree to share calibration data during setup, a few anonymous numbers about your car model are shared through Apple's CloudKit service to help accuracy for other owners. Never your trips, locations, or identity.
 
 
 ## What is HybridEdge?
@@ -25,13 +28,13 @@ An iPhone app that answers the question the trip computer won't: what does each 
 ## Which cars does it work with?
 
 **Paragraph 1**
-HybridEdge was developed and validated on the BYD Denza B5, with its measurements checked against the dash over hundreds of kilometres (battery state agrees within about 0.3%). Testing is now rolling out to the Denza B8 and BYD Shark 6, and before long the beta opens to a wider range of PHEVs. The app's database covers ~80 plug-in hybrids sold in Australia, and any PHEV can use manual logging today. Full automatic readings for new models arrive through in-app calibration: the app learns your car as you drive, and tells you honestly when a value for your model is verified and when it isn't.
+HybridEdge was developed and validated on the BYD Denza B5, with its measurements checked against the dash over hundreds of kilometres (battery state agrees within about 0.3%). Testing now includes the Denza B8 and BYD Shark 6, with more PHEVs to follow soon. The app's database covers 80+ plug-in hybrids sold in Australia, and any PHEV can use manual logging today. Full automatic readings for new models arrive through in-app calibration: the app learns your car as you drive, and tells you honestly when a value for your model is verified and when it isn't.
 
 
 ## Do I need to buy anything?
 
 **Paragraph 1**
-No. Every core feature works with manual entry: tap Start trip, type the odometer, fuel, and battery figures off your dash, then end the trip the same way. All costs, the logbook, and insights work from that. If you want the car to fill the numbers in itself, a ~$50 Bluetooth OBD-II reader (we test with the Veepeak OBDCheck BLE+) plugs into the port under the steering wheel, and the app records battery, fuel, odometer, and speed continuously while you drive.
+No. Every core feature works with manual entry: tap Start trip, type the odometer, fuel, and battery figures off your dash, then end the trip the same way. All costs, the logbook, and insights work from that. If you want the car to fill the numbers in itself, a Bluetooth OBD-II reader from as little as $11 (we test with the Veepeak OBDCheck BLE+) plugs into the port under the steering wheel, and the app records battery, fuel, odometer, and speed continuously while you drive.
 
 
 ## Which OBD readers are compatible?

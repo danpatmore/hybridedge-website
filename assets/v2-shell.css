@@ -84,6 +84,9 @@ main.measure dd { margin: 4px 0 0 0; }
   color: var(--text); font-weight: 500;
   box-shadow: inset 0 1px 0 rgba(255,255,255,.05);
 }
+main.measure .fn {
+  margin: -12px 0 30px; font-size: 13px; font-weight: 400; color: var(--faint);
+}
 
 /* ---------- reader table (FAQ) ---------- */
 table.readers { width: 100%; border-collapse: collapse; font-size: 14.5px; margin: 16px 0; }
