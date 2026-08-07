@@ -45,9 +45,6 @@ The short rule: HybridEdge works with Bluetooth Low Energy readers that speak th
 **Table row: Veepeak OBDCheck BLE+**
 Veepeak OBDCheck BLE+ ~$50 | Confirmed | The tested and recommended reader, validated over hundreds of kilometres of driving.
 
-**Table row: Generic "ELM327 mini" Bluetooth OBD2 (Amazon)**
-Generic "ELM327 mini" Bluetooth OBD2 (Amazon) ~$11 | Mixed | A firmware lottery: two units from the same listing shipped different chips. One (ELM327 v2.1 firmware) works fully, field-confirmed on a BYD Shark 6. Another (v1.5 clone firmware) connects and reads speed and odometer but returns no battery or fuel data at all, field-tested on a Denza B5. If your unit reports v1.5, expect missing data.
-
 **Table row: Veepeak OBDCheck BLE**
 Veepeak OBDCheck BLE ~$40 | Probably | The tested reader's near-identical sibling: same hardware and radio, older ELM327 command set that still covers everything HybridEdge uses.
 
@@ -65,6 +62,9 @@ PLX Kiwi 3 ~$150 | Probably | Premium unit, meets the spec on paper. Not yet ver
 
 **Table row: Other BLE ELM327 readers**
 Other BLE ELM327 readers | Probably | The listing should say Bluetooth Low Energy, BLE, or iOS support. A version tip: genuine ELM327 firmware went 1.4, then 2.0 to 2.3. Readers reporting "v1.5" are clones; many work fine for what HybridEdge needs, but quality varies, and the app will tell you either way.
+
+**Table row: Generic "ELM327 mini" Bluetooth OBD2 (Amazon)**
+Generic "ELM327 mini" Bluetooth OBD2 (Amazon) ~$11 | Mixed | A firmware lottery: two units from the same listing shipped different chips. One (ELM327 v2.1 firmware) works fully, field-confirmed on a BYD Shark 6. Another (v1.5 clone firmware) connects and reads speed and odometer but returns no battery or fuel data at all, field-tested on a Denza B5. If your unit reports v1.5, expect missing data.
 
 **Table row: OBDLink MX+**
 OBDLink MX+ ~$180 | Not compatible | A premium adapter, but it uses classic Bluetooth with Apple's accessory certification, a different technology from the Bluetooth Low Energy that HybridEdge speaks. Despite the "works with iPhone" label, it won't connect to this app.
