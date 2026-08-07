@@ -71,18 +71,7 @@ While you drive, the app takes a fresh reading from the car more than 150 times 
 **Section heading**
 What it measures.
 
-### Slide 01 · Live capture
-
-**Heading**
-Watch the drive as it happens.
-
-**Paragraph**
-Battery, fuel, speed, and which energy source is doing the work right now, live from the car while you drive. CarPlay included.
-
-**Closing line (blue)**
-Measured values only. When the reader is off, the dials say so.
-
-### Slide 02 · True cost
+### Slide 01 · True cost
 
 **Heading**
 Every trip in dollars, split by energy source.
@@ -93,7 +82,29 @@ Electric cost, petrol cost, and the combined per-100 km figure for each drive, e
 **Closing line (green)**
 $17.07/100 km is a real 30-day figure, not a brochure one.
 
-### Slide 03 · Your real tariff
+### Slide 02 · Logbook
+
+**Heading**
+A logbook that holds up at tax time.
+
+**Paragraph**
+Every trip with odometer readings, places, and costs. Swipe to tag business or private, export a clean CSV for your accountant with the business-use percentage computed.
+
+**Closing line (green)**
+Record business kilometres. Give your accountant real data.
+
+### Slide 03 · Energy ledger
+
+**Heading**
+Every charge and every fill, one ledger.
+
+**Paragraph**
+Charges and refuels sit in one editable history, so the cost basis behind every trip is visible and correctable. Mistype a charge and you can fix it later without breaking the maths.
+
+**Closing line (gold)**
+All your energy costs, logged and listed.
+
+### Slide 04 · Your real tariff
 
 **Heading**
 Charges priced by your actual plan.
@@ -105,7 +116,7 @@ Free windows and time-of-use included. A midnight charge and a peak-hour charge 
 **Closing line (blue)**
 Solar counts as free. Free windows count as free.
 
-### Slide 04 · Receipt scanning
+### Slide 05 · Receipt scanning
 
 **Heading**
 Snap a refill, capture the cost.
@@ -115,17 +126,6 @@ Litres and price read straight off the pump or receipt. Charging sessions scan t
 
 **Closing line (gold)**
 Every electron in your battery and litre of petrol in your tank has a price.
-
-### Slide 05 · Logbook
-
-**Heading**
-A logbook that holds up at tax time.
-
-**Paragraph**
-Every trip with odometer readings, places, and costs. Swipe to tag business or private, export a clean CSV for your accountant with the business-use percentage computed.
-
-**Closing line (green)**
-Record business kilometres. Give your accountant real data.
 
 ### Slide 06 · PHEV database
 
@@ -138,16 +138,16 @@ Battery sizes, tank capacities, and consumption figures for the plug-in hybrids 
 **Closing line (blue)**
 Your model missing? It gets added on request.
 
-### Slide 07 · Energy ledger
+### Slide 07 · Live capture
 
 **Heading**
-Every charge and every fill, one ledger.
+Watch the drive as it happens.
 
 **Paragraph**
-Charges and refuels sit in one editable history, so the cost basis behind every trip is visible and correctable. Mistype a charge and you can fix it later without breaking the maths.
+Battery, fuel, speed, and which energy source is doing the work right now, live from the car while you drive. CarPlay included.
 
-**Closing line (gold)**
-All your energy costs, logged and listed.
+**Closing line (blue)**
+Measured values only. When the reader is off, the dials say so.
 
 ## Privacy
 
