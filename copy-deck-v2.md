@@ -155,13 +155,13 @@ Measured values only. When the reader is off, the dials say so.
 Nothing to sign up to.
 
 **Paragraph** ("privacy policy" is the link)
-There is no account and no server. Your trips, costs, and locations stay on your phone. The one optional share is a handful of anonymous calibration numbers to help accuracy for other owners of your model, and the app asks you about it plainly during setup. The privacy policy is short because there is so little to say.
+There is no account and no server. Your trips, costs, and locations stay on your phone. One optional share of anonymous calibration numbers to help build accuracy for other owners of your model, and the app asks you about it plainly during setup. The privacy policy is short because there is so little to say.
 
 **Grid cells**
-No accounts
-No analytics
-No ads, ever
-Trips never leave your phone
+NO ACCOUNTS
+NO ANALYTICS
+NO ADS, EVER!
+TRIPS NEVER LEAVE YOUR PHONE
 
 ## Beta call to action
 
