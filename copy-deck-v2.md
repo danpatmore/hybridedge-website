@@ -52,7 +52,7 @@ HybridEdge blends the costs, exactly when and how you used the energy. A small B
 Checked against your vehicle, not against a brochure.
 
 **Intro paragraph**
-The app's readings are validated against the car's own instruments, drive by drive, before they are shown as truth. When the app has not verified a number for your exact model yet, it says so and asks you to read the dash while it learns.
+The app's readings are validated against the car's own instruments, drive by drive, before they are shown as truth. When the app has not verified a number for your exact model yet, it says so and asks you to record the dash stats while it learns.
 
 **Tile 1 (0.3%)**
 How far the app's battery reading sat from the dash at full charge on the reference car, validated across the whole battery range.
@@ -60,8 +60,8 @@ How far the app's battery reading sat from the dash at full charge on the refere
 **Tile 2 (±2%)**
 Measured usable battery capacity agrees with the manufacturer's own cloud data to within two percent. The brochure figure was 10% off.
 
-**Tile 3 (127)**
-Real captured car responses are replayed through the test suite before every single release. If a decode drifts, the build fails.
+**Tile 3 (150+)**
+While you drive, the app takes a fresh reading from the car more than 150 times a minute: battery level, fuel level, speed, and what the engine is doing. Every trip is built from thousands of real measurements.
 
 **Proof photo caption**
 
