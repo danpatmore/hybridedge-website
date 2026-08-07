@@ -1,71 +1,44 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-AU">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>FAQ | HybridEdge</title>
-<style>
-  :root { color-scheme: light dark; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    max-width: 680px; margin: 0 auto; padding: 32px 20px 64px;
-    line-height: 1.6; color: #1a1a1a; background: #fff;
-  }
-  h1 { font-size: 1.7em; margin-bottom: 0.2em; }
-  h2 { font-size: 1.15em; margin-top: 2em; }
-  .updated { opacity: 0.6; font-size: 0.9em; }
-  .summary {
-    background: #f0f5f2; border-radius: 12px; padding: 16px 20px;
-    margin: 24px 0; font-weight: 500;
-  }
-  a { color: #1d6ea5; }
-  table.readers { width: 100%; border-collapse: collapse; font-size: 0.92em; margin: 12px 0; }
-  table.readers th, table.readers td {
-    text-align: left; padding: 8px 10px; vertical-align: top;
-    border-bottom: 1px solid #e2e6ea;
-  }
-  .status-yes   { color: #1d7a5c; font-weight: 600; white-space: nowrap; }
-  .status-maybe { color: #a06a00; font-weight: 600; white-space: nowrap; }
-  .status-no    { color: #b3352b; font-weight: 600; white-space: nowrap; }
-  .price { font-size: 0.85em; opacity: 0.65; }
-  nav.top { display: flex; gap: 8px; margin-bottom: 32px; }
-  nav.top a {
-    flex: 1; text-align: center; font-size: 0.85em; padding: 7px 4px;
-    background: #f0f2f4; border: 1px solid #e2e6ea; border-radius: 999px;
-    color: #3a4750; text-decoration: none;
-  }
-  nav.top a.current { border-color: #2aa87e; color: #1d7a5c; font-weight: 600; }
-  @media (prefers-color-scheme: dark) {
-    body { color: #e8e8e8; background: #0b0e11; }
-    a { color: #6db3f2; }
-    .summary { background: #14181d; }
-    table.readers th, table.readers td { border-bottom-color: #1e242b; }
-    .status-yes   { color: #2aa87e; }
-    .status-maybe { color: #e0a63a; }
-    .status-no    { color: #e0655a; }
-    nav.top a { background: #14181d; border-color: #1e242b; color: #98a2ab; }
-    nav.top a.current { border-color: #2aa87e; color: #2aa87e; }
-  }
-</style>
+<title>FAQ · HybridEdge</title>
+<link rel="icon" type="image/png" href="images/v2/app-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/v2-shell.css?v=3">
 </head>
 <body>
 
-<nav class="top">
-  <a href="index.html">Home</a>
-  <a href="faq.html" class="current">FAQ</a>
-  <a href="support.html">Support</a>
-  <a href="privacy.html">Privacy</a>
-  <a href="terms.html">Terms</a>
-</nav>
+<header class="site">
+  <nav class="nav">
+    <a class="brand" href="index.html" aria-label="HybridEdge home">
+      <img class="icon" src="images/v2/app-icon.png" alt="">
+      <img class="mark" src="images/v2/wordmark-dark.png" alt="HybridEdge">
+    </a>
+    <a class="link current" href="faq.html">FAQ</a>
+    <a class="link" href="support.html">Support</a>
+    <a class="link" href="privacy.html">Privacy</a>
+    <a class="link" href="terms.html">Terms</a>
+    <a class="pill" href="mailto:support@hybridedge.com.au?subject=HybridEdge%20beta">Join the beta</a>
+  </nav>
+</header>
 
+<main class="measure">
 <h1>Frequently asked questions</h1>
 <p class="updated">HybridEdge beta · Updated 29 July 2026</p>
 
 <div class="summary">
-  The short version: HybridEdge measures what your plug-in hybrid really
-  costs to run, petrol and electricity together. No account, no ads, nothing
-  leaves your phone, and you don't need any hardware to use it.
+  The short version: HybridEdge measures what powering your plug-in hybrid
+  really costs, petrol and electricity together. No account, no ads, nothing
+  leaves your phone*, and you don't need any hardware to use it.
 </div>
+<p class="fn">*If you agree to share calibration data during setup, a few
+anonymous numbers about your car model are shared through Apple's CloudKit
+service to help accuracy for other owners. Never your trips, locations, or
+identity.</p>
 
 <h2>What is HybridEdge?</h2>
 <p>An iPhone app that answers the question the trip computer won't: what does
@@ -77,9 +50,9 @@ measured from the car, or it isn't shown.</p>
 <h2>Which cars does it work with?</h2>
 <p>HybridEdge was developed and validated on the BYD Denza B5, with its
 measurements checked against the dash over hundreds of kilometres (battery
-state agrees within about 0.3%). Testing is now rolling out to the Denza B8
-and BYD Shark 6, and before long the beta opens to a wider range of PHEVs.
-The app's database covers ~80 plug-in hybrids sold in Australia, and any
+state agrees within about 0.3%). Testing now includes the Denza B8 and BYD
+Shark 6, with more PHEVs to follow soon.
+The app's database covers 80+ plug-in hybrids sold in Australia, and any
 PHEV can use manual logging today. Full automatic readings for new models
 arrive through in-app calibration: the app learns your car as you drive,
 and tells you honestly when a value for your model is verified and when it
@@ -89,8 +62,9 @@ isn't.</p>
 <p>No. Every core feature works with manual entry: tap Start trip, type the
 odometer, fuel, and battery figures off your dash, then end the trip the same
 way. All costs, the logbook, and insights work from that. If you want the car
-to fill the numbers in itself, a ~$50 Bluetooth OBD-II reader (we test with
-the Veepeak OBDCheck BLE+) plugs into the port under the steering wheel, and
+to fill the numbers in itself, a Bluetooth OBD-II reader from as little as
+$11 (we test with the Veepeak OBDCheck BLE+) plugs into the port under the
+steering wheel, and
 the app records battery, fuel, odometer, and speed continuously while you
 drive.</p>
 
@@ -100,45 +74,45 @@ speak the ELM327 command set. If a reader turns out not to be compatible,
 the app says so clearly on screen, and manual entry always works regardless.
 Here's the current state of the list:</p>
 
-<table class="readers">
+<div class="table-scroll"><table class="readers">
   <tr><th>Reader</th><th>Status</th><th>Notes</th></tr>
   <tr>
-    <td><strong>Veepeak OBDCheck BLE+</strong><br><span class="price">~$50</span></td>
+    <td><div class="rcell"><img class="rpic" src="images/v2/readers/veepeak-ble-plus.jpg" alt=""><div><strong>Veepeak OBDCheck BLE+</strong><br><span class="price">~$50</span></div></div></td>
     <td class="status-yes">Confirmed</td>
     <td>The tested and recommended reader, validated over hundreds of
     kilometres of driving.</td>
   </tr>
   <tr>
-    <td><strong>Generic "ELM327 mini" Bluetooth OBD2 (Amazon)</strong><br><span class="price">~$11</span></td>
+    <td><div class="rcell"><img class="rpic" src="images/v2/readers/elm327-mini.png" alt=""><div><strong>Generic "ELM327 mini" Bluetooth OBD2 (Amazon)</strong><br><span class="price">~$11</span></div></div></td>
     <td class="status-yes">Confirmed</td>
     <td>Field-confirmed by a beta tester on a BYD Shark 6: clean connections,
     full data flow, and a genuine ELM327 v2.1 firmware banner. Remarkable
     value; one tester's evidence so far.</td>
   </tr>
   <tr>
-    <td><strong>Veepeak OBDCheck BLE</strong><br><span class="price">~$40</span></td>
+    <td><div class="rcell"><img class="rpic" src="images/v2/readers/veepeak-ble.jpg" alt=""><div><strong>Veepeak OBDCheck BLE</strong><br><span class="price">~$40</span></div></div></td>
     <td class="status-maybe">Probably</td>
     <td>The tested reader's near-identical sibling: same hardware and radio,
     older ELM327 command set that still covers everything HybridEdge uses.</td>
   </tr>
   <tr>
-    <td><strong>vLinker MC+</strong><br><span class="price">~$60</span></td>
+    <td><div class="rcell"><img class="rpic" src="images/v2/readers/vlinker-mc-plus.jpg" alt=""><div><strong>vLinker MC+</strong><br><span class="price">~$60</span></div></div></td>
     <td class="status-maybe">Probably</td>
     <td>Meets the spec on paper. Not yet verified in the field.</td>
   </tr>
   <tr>
-    <td><strong>Vgate iCar Pro Bluetooth&nbsp;4.0</strong><br><span class="price">~$35</span></td>
+    <td><div class="rcell"><img class="rpic" src="images/v2/readers/vgate-icar-pro.jpg" alt=""><div><strong>Vgate iCar Pro Bluetooth&nbsp;4.0</strong><br><span class="price">~$35</span></div></div></td>
     <td class="status-maybe">Probably</td>
     <td>Meets the spec on paper. Not yet verified in the field.</td>
   </tr>
   <tr>
-    <td><strong>OBDLink CX</strong><br><span class="price">~$130</span></td>
+    <td><div class="rcell"><img class="rpic" src="images/v2/readers/obdlink-cx.jpg" alt=""><div><strong>OBDLink CX</strong><br><span class="price">~$130</span></div></div></td>
     <td class="status-maybe">Probably</td>
     <td>Premium unit, meets the spec on paper. Not yet verified in the
     field.</td>
   </tr>
   <tr>
-    <td><strong>PLX Kiwi 3</strong><br><span class="price">~$150</span></td>
+    <td><div class="rcell"><img class="rpic" src="images/v2/readers/plx-kiwi3.jpg" alt=""><div><strong>PLX Kiwi 3</strong><br><span class="price">~$150</span></div></div></td>
     <td class="status-maybe">Probably</td>
     <td>Premium unit, meets the spec on paper. Not yet verified in the
     field.</td>
@@ -178,7 +152,7 @@ Here's the current state of the list:</p>
     <td>Most bargain "Bluetooth ELM327" dongles are classic Bluetooth,
     which iPhone apps cannot use. BLE only.</td>
   </tr>
-</table>
+</table></div>
 
 <p>Help grow the Confirmed list: when a reader connects, the app records
 which model and firmware it identified as. Drive once with your reader,
@@ -191,7 +165,7 @@ socket faces the floor. It's a 16-pin trapezoid about the size of a matchbox,
 and some cars hide it behind a small flip-down cover. The reader stays
 plugged in permanently.</p>
 <p>The port is designed for exactly this kind of accessory. HybridEdge only
-asks the standard read-only questions a mechanic's scan tool asks (battery
+asks read-only questions the same way a mechanic's scan tool does (battery
 level, fuel level, odometer, and speed). It cannot change settings, clear
 fault codes, or modify your car in any way. That said, OBD readers are
 third-party hardware, so if you're unsure how an accessory sits with your
@@ -201,11 +175,11 @@ warranty or insurance, ask your dealer before plugging one in.</p>
 <p>There's no account and no sign-up because there's nothing to sign up to.
 There are no ads either, and there never will be. Your trips, costs, and
 locations are stored only on your phone. The app makes
-one kind of network request on its own, downloading a public list of vehicle
-specifications, and it contains nothing about you. One more is your choice,
-asked plainly during setup: sharing anonymous calibration results (your
-car's model and the fitted numbers, never your trips or identity) so the
-app gets accurate for other owners of your model. It's preselected
+one periodic network request to download a public list of vehicle
+specifications, and it contains nothing about you. One more is optional,
+prompted during setup: the app asks to share anonymous calibration results
+(your car's model and the fitted numbers, never your trips or identity) so
+it can build accuracy for other owners of your make and model. It's preselected
 because the whole fleet benefits, and one tap turns it off. The full detail is in the
 <a href="privacy.html">privacy policy</a>; it's short because there's so
 little to say.</p>
@@ -253,6 +227,22 @@ its numbers can be trusted, not before.</p>
 
 <h2>Contact</h2>
 <p>Anything else: <a href="mailto:support@hybridedge.com.au">support@hybridedge.com.au</a></p>
+</main>
+
+<footer class="site">
+  <div class="foot">
+    <a class="brand" href="index.html">
+      <img class="icon" src="images/v2/app-icon.png" alt="" style="width:26px;height:26px">
+      <img class="mark" src="images/v2/wordmark-dark.png" alt="HybridEdge" style="height:17px">
+    </a>
+    <a href="faq.html">FAQ</a>
+    <a href="support.html">Support</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+    <a href="https://www.facebook.com/HybridEdgeApp/">Facebook</a>
+    <p class="prov">Made in Australia by one PHEV owner who wanted real numbers.</p>
+  </div>
+</footer>
 
 </body>
 </html>
