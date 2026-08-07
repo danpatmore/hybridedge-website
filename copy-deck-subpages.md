@@ -46,7 +46,7 @@ The short rule: HybridEdge works with Bluetooth Low Energy readers that speak th
 Veepeak OBDCheck BLE+ ~$50 | Confirmed | The tested and recommended reader, validated over hundreds of kilometres of driving.
 
 **Table row: Generic "ELM327 mini" Bluetooth OBD2 (Amazon)**
-Generic "ELM327 mini" Bluetooth OBD2 (Amazon) ~$11 | Confirmed | Field-confirmed by a beta tester on a BYD Shark 6: clean connections, full data flow, and a genuine ELM327 v2.1 firmware banner. Remarkable value; one tester's evidence so far.
+Generic "ELM327 mini" Bluetooth OBD2 (Amazon) ~$11 | Mixed | A firmware lottery: two units from the same listing shipped different chips. One (ELM327 v2.1 firmware) works fully, field-confirmed on a BYD Shark 6. Another (v1.5 clone firmware) connects and reads speed and odometer but returns no battery or fuel data at all, field-tested on a Denza B5. If your unit reports v1.5, expect missing data.
 
 **Table row: Veepeak OBDCheck BLE**
 Veepeak OBDCheck BLE ~$40 | Probably | The tested reader's near-identical sibling: same hardware and radio, older ELM327 command set that still covers everything HybridEdge uses.
