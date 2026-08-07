@@ -208,7 +208,7 @@ Privacy policy · Terms of use · FAQ
 Privacy Policy
 
 **Updated line**
-HybridEdge for iOS · Effective 6 August 2026
+HybridEdge for iOS · Effective 7 August 2026
 
 **Summary box**
 The short version: HybridEdge has no accounts, no analytics, no ads, and no tracking. Your driving history lives on your phone and nowhere else. The app makes one kind of network request on its own (downloading a public list of vehicle specifications, containing nothing about you), plus one optional one: sharing anonymous calibration results to improve accuracy for everyone. That one is presented as a clear choice during setup, is on unless you decline, and can be switched off anytime.
@@ -217,13 +217,13 @@ The short version: HybridEdge has no accounts, no analytics, no ads, and no trac
 ## No account, no sign-up
 
 **Paragraph 1**
-HybridEdge does not ask you to create an account or provide any personal details. We have no user database, because there are no users to put in one.
+HybridEdge does not ask you to create an account or provide any personal details. We have no user database, and because of this there will never be any scraping or selling your data. We can't because we don't collect anything.
 
 
 ## What the app records, and where it lives
 
 **Paragraph 1**
-Trips, fuel and charging events, costs, vehicle telemetry read from your OBD adapter, and trip locations are stored only on your device, in the app's local database. Nothing is uploaded, synced, or transmitted to us or to anyone else. Deleting the app deletes all of it; there is no server copy to ask us to remove, because none exists.
+Trips, fuel and charging events, costs, vehicle telemetry read from your OBD adapter, and trip locations are stored only on your device, in the app's local database. Nothing is uploaded, synced, or transmitted to us or to anyone else. Deleting the app deletes all of it; there is no server copy to ask us to remove (or restore), because none exists.
 
 
 ## Location
