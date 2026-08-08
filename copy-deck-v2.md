@@ -18,8 +18,8 @@ HybridEdge reads your plug-in hybrid's own data over a ~$50 OBD reader\*, prices
 **Lead footnote** (small print under the hero; "the FAQ" links to the adapter list)
 \*One of the currently compatible readers. See the FAQ for the adapters we have tested.
 
-**Button 1**
-Ask for a beta invite
+**Button 1** (links to the TestFlight public join page)
+Join the beta on TestFlight
 
 **Button 2**
 See how it measures
@@ -174,8 +174,8 @@ Drive a PHEV? Help measure it.
 **Paragraph**
 HybridEdge was developed and validated on the Denza B5, and testing is rolling out across the BYD Shark 6, Denza B8, and a growing list of models through the same measure-everything process. All you need is an iPhone, your car, and a ~$50 reader.
 
-**Button**
-Ask for a beta invite
+**Button** (links to the TestFlight public join page)
+Join the beta on TestFlight
 
 **Note under button**
 BYD and Denza owners get priority while calibration for those models matures.
