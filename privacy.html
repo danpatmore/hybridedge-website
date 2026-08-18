@@ -78,11 +78,17 @@ plain file download.</p>
 result can be shared so the app becomes accurate for other owners of the
 same model. During setup the app asks you directly, with sharing
 preselected; you can decline with one tap there, or switch it off later
-in Settings under Diagnostics. If sharing is on, the app submits one
-small anonymous record per completed calibration: the vehicle make and
-model, the channel calibrated, and the fitted numbers, via Apple's
-CloudKit service. It contains no trips, no locations, and nothing that
-identifies you.</p>
+in Settings under Diagnostics. If sharing is on, the app submits two
+kinds of small anonymous record via Apple's CloudKit service. While your
+model is still being calibrated, it shares each calibration reading: the
+raw value from the car, the dash reading you typed, the channel, and your
+vehicle and reader model. When a calibration completes, it shares the
+fitted numbers. Neither contains trips, locations, times of day, the
+support code from diagnostic reports, or anything that identifies you.
+Readings are used only to build your model's calibration and are deleted
+once that calibration is published; sharing stops by itself once your
+model is calibrated, and your car keeps calibrating on your phone whether
+you share or not.</p>
 
 <h2>Diagnostic reports (only when you send them)</h2>
 <p>If something looks wrong, you can choose to send a diagnostic report from
@@ -114,7 +120,9 @@ These contain diagnostic information, not your driving history.</p>
 <p>If this policy ever changes, for example if a future optional feature
 involves a new kind of network request, the change will be described here
 with a new effective date, and the in-app description will match.
-(27 July 2026: added the optional calibration-sharing section above,
+(18 August 2026: calibration sharing described in full — readings while a
+model is being calibrated, fitted numbers on completion, deletion once
+published. 27 July 2026: added the optional calibration-sharing section above,
 exactly per this clause. 6 August 2026: calibration sharing changed from
 off by default to preselected during setup. What is shared did not
 change; only the default did.)</p>
