@@ -84,8 +84,8 @@ Here's the current state of the list:</p>
   <tr>
     <td><div class="rcell"><img class="rpic" src="images/v2/readers/veepeak-ble.jpg" alt=""><div><strong>Veepeak OBDCheck BLE</strong><br><span class="price">~$45</span></div></div></td>
     <td class="status-maybe">Probably</td>
-    <td>The tested reader's near-identical sibling: same hardware and radio,
-    older ELM327 command set that still covers everything HybridEdge uses.</td>
+    <td>Same hardware as the BLE+, older command set, covers everything the
+    app uses.</td>
   </tr>
   <tr>
     <td><div class="rcell"><img class="rpic" src="images/v2/readers/vlinker-mc-plus.jpg" alt=""><div><strong>vLinker MC+</strong><br><span class="price">~$60</span></div></div></td>
@@ -112,51 +112,48 @@ Here's the current state of the list:</p>
   <tr>
     <td><strong>Other BLE ELM327 readers</strong></td>
     <td class="status-maybe">Probably</td>
-    <td>Reading the listing: "Android only", "Symbian", or "PPC" means
-    classic Bluetooth, which iPhones cannot use at all. "iOS", "iPhone",
-    "BLE", or "Bluetooth 4.0/5.0" means the right radio, and the reader
-    will connect. What no listing tells you is the firmware inside: genuine
-    ELM327 firmware went 1.4, then 2.0 to 2.3, and readers reporting "v1.5"
-    are clones. Some v1.5 clones work; we have field-tested one that
-    connects fine but cannot read hybrid data at all. The app shows your
-    reader's firmware in Settings, so you can check what you actually
-    received.</td>
+    <td><ul class="rnotes">
+    <li>Listing says "iOS", "BLE", or "Bluetooth 4.0/5.0": right radio,
+    will connect</li>
+    <li>Listing says "Android only": classic Bluetooth, won't work on
+    iPhone</li>
+    <li>Firmware reporting "v1.5" is a clone; some work, some can't read
+    hybrid data</li>
+    <li>The app shows your reader's firmware in Settings</li>
+    </ul></td>
   </tr>
   <tr>
     <td><div class="rcell"><img class="rpic" src="images/v2/readers/elm327-mini.png" alt=""><div><strong>Generic "ELM327 mini" Bluetooth OBD2 (Amazon)</strong><br><span class="price">~$11</span></div></div></td>
     <td class="status-no">Not compatible</td>
-    <td>A firmware lottery, downgraded after field testing: units from the
-    same listing ship different chips. Some (v1.5 clone firmware) return no
-    battery or fuel data at all. One unit with v2.1 firmware worked at first,
-    then triggered a charging-system fault on a BYD Shark 6 that needed a
-    full vehicle reboot to clear. Not worth the gamble at any price.</td>
+    <td><ul class="rnotes">
+    <li>A lottery: the same listing ships different chips</li>
+    <li>Some units return no hybrid data; one triggered a charging fault
+    on a Shark 6</li>
+    <li>Not worth the gamble at any price</li>
+    </ul></td>
   </tr>
   <tr>
     <td><strong>"OBD Advanced" / HHOBD torch-style (AliExpress, eBay)</strong><br><span class="price">~$5</span></td>
     <td class="status-maybe">A gamble</td>
-    <td>Tester-reported, both ways. These torch-shaped units (elm327.com or
-    ymobd.com on the box) are a lottery inside one shell: many are classic
-    Bluetooth, which iPhones cannot use at all, but one tester's AU$4.60
-    AliExpress unit connects over Bluetooth LE with v2.1 firmware and
-    delivers full live data on his Shark 6. You cannot tell which you'll
-    get before it arrives, and there's little recourse when it's the wrong
-    one. If you want certainty, buy a confirmed reader.</td>
+    <td><ul class="rnotes">
+    <li>A lottery inside one shell: many are classic Bluetooth (no
+    iPhone)</li>
+    <li>One tester's $4.60 unit works perfectly on his Shark 6</li>
+    <li>No way to tell which you'll get; buy a confirmed reader for
+    certainty</li>
+    </ul></td>
   </tr>
   <tr>
     <td><strong>OBDLink MX+</strong><br><span class="price">~$180</span></td>
     <td class="status-no">Not compatible</td>
-    <td>A premium adapter, but it uses classic Bluetooth with Apple's
-    accessory certification, a different technology from the Bluetooth Low
-    Energy that HybridEdge speaks. Despite the "works with iPhone" label,
-    it won't connect to this app.</td>
+    <td>Classic Bluetooth, not BLE. The "works with iPhone" label doesn't
+    apply to this app.</td>
   </tr>
   <tr>
     <td><strong>Jaycar Response PP2145</strong><br><span class="price">~$109</span></td>
     <td class="status-no">Not compatible</td>
-    <td>Tester-reported and confirmed against the maker's manual. Its ELM327
-    data runs over classic Bluetooth (Android only); the Bluetooth LE side
-    speaks a proprietary protocol only the maker's own iPhone app can use.
-    HybridEdge's compatibility check correctly refuses it.</td>
+    <td>ELM327 data is classic Bluetooth (Android only); its BLE side only
+    talks to the maker's own app.</td>
   </tr>
   <tr>
     <td><strong>Any Wi-Fi reader</strong></td>
