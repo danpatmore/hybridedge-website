@@ -221,9 +221,42 @@ typically pay when you charge, or set the exact rate on each charge. Proper
 dynamic-pricing support is planned.</p>
 
 <h2>Is there an Android version?</h2>
-<p>No, and there isn't one planned. HybridEdge is an iPhone app, and getting
-it right through this beta is the whole focus. If that ever changes, it will
-be announced on the <a href="https://www.facebook.com/HybridEdgeApp/">Facebook page</a>.</p>
+<p>Not yet, and no promises. HybridEdge is an iPhone app, and getting it
+right through this beta is the whole focus. Whether Android ever happens
+depends on how the launch goes and how many people register interest below.
+If it does, it will be announced on the
+<a href="https://www.facebook.com/HybridEdgeApp/">Facebook page</a>.</p>
+<div id="android-interest" style="margin:14px 0 6px">
+  <input id="ai-phone" placeholder="Your phone, like Samsung S25" maxlength="80"
+    style="display:block;width:100%;max-width:320px;margin-bottom:8px;padding:10px 12px;border-radius:10px;border:1px solid #444;background:transparent;color:inherit">
+  <input id="ai-car" placeholder="Your PHEV, like Shark 6" maxlength="80"
+    style="display:block;width:100%;max-width:320px;margin-bottom:10px;padding:10px 12px;border-radius:10px;border:1px solid #444;background:transparent;color:inherit">
+  <input id="ai-web" name="website" autocomplete="off" tabindex="-1" aria-hidden="true"
+    style="position:absolute;left:-9999px">
+  <button id="ai-btn" onclick="aiSend()"
+    style="display:inline-block;padding:10px 22px;border-radius:999px;background:#1D9E75;color:#04342C;font-weight:600;border:none;cursor:pointer">Register interest</button>
+  <p id="ai-done" style="display:none;color:#1D9E75;font-weight:600">Noted. Thanks, that count genuinely steers the decision.</p>
+</div>
+<script>
+async function aiSend() {
+  const btn = document.getElementById('ai-btn');
+  btn.disabled = true;
+  try {
+    await fetch('/api/android-interest', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({
+        phone: document.getElementById('ai-phone').value,
+        car: document.getElementById('ai-car').value,
+        website: document.getElementById('ai-web').value,
+      }),
+    });
+  } catch (e) {}
+  document.getElementById('android-interest').querySelectorAll('input,button')
+    .forEach(el => el.style.display = 'none');
+  document.getElementById('ai-done').style.display = 'block';
+}
+</script>
 
 <h2>What iPhone do I need?</h2>
 <p>Any iPhone from the iPhone 11 or iPhone SE (2nd generation) onward,
