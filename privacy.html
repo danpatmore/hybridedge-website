@@ -28,17 +28,18 @@
 
 <main class="measure">
 <h1>Privacy Policy</h1>
-<p class="updated">HybridEdge for iOS · Effective 18 August 2026</p>
+<p class="updated">HybridEdge for iOS · Effective 19 September 2026</p>
 
 <div class="summary">
   The short version: HybridEdge has no accounts, no analytics, no ads, and no
-  tracking. Your driving history lives on your phone and nowhere else. On its
-  own the app only downloads public reference data (vehicle specifications
-  and Australian electricity plans, containing nothing about you). Two things
-  can go the other way, both your choice: anonymous calibration data, which
-  is presented as a clear choice during setup, is on unless you decline, and
-  can be switched off anytime; and a diagnostic report, only ever when you
-  choose to send one.
+  tracking. Your driving history lives on your phone, and in your own iCloud
+  only if you set up household sync. On its own the app only downloads public
+  reference data (vehicle specifications and Australian electricity plans,
+  containing nothing about you). Three things can go the other way, all your
+  choice: household sync, into your own iCloud, only if you set it up;
+  anonymous calibration data, which is presented as a clear choice during
+  setup, is on unless you decline, and can be switched off anytime; and a
+  diagnostic report, only ever when you choose to send one.
 </div>
 
 <h2>No account, no sign-up</h2>
@@ -53,8 +54,8 @@ in the app's local database. Nothing leaves your phone unless you choose it:
 there is no account and no developer server holding a copy of your driving.
 Deleting the app deletes everything on the phone; we hold no copy to ask us
 to remove (or restore), because none exists.</p>
-<p>The three things you can choose to share — household sync, calibration
-data, and a diagnostic report — are described in full below.</p>
+<p>You can choose to share three things, each described in full below:
+household sync, calibration data, and a diagnostic report.</p>
 
 <h2>Household sync (your choice, off until you set it up)</h2>
 <p>If you turn on household sync, your vehicle's trips, costs, and charging
@@ -62,9 +63,14 @@ events are copied into <strong>your own iCloud</strong> and shared with the
 phones you invite, using Apple's iCloud sharing. This is the one feature
 that keeps a copy of your driving outside the phone, and it lives in your
 iCloud account under Apple's terms, not on any server of ours. We never see
-this data and cannot access it. Leaving the household on one phone stops the
-sharing for that phone but deletes nothing elsewhere; the copy in your
-iCloud remains until you remove it through your iCloud storage settings.</p>
+this data and cannot access it. Switching household sync off on a phone
+stops that phone syncing and deletes nothing.</p>
+<p>To delete the copy, tap Delete household data on the Household sync card,
+in Settings under Data &amp; Backups. On the phone that set up the household,
+it deletes the shared copy from iCloud for every phone. On any other phone,
+it deletes that phone's copy and leaves the household. Trips already on each
+phone stay on that phone. You can also remove the copy through your iCloud
+storage settings.</p>
 
 <h2>Location</h2>
 <p>If you grant location permission, the app records trip start and end
@@ -74,8 +80,8 @@ without it.</p>
 
 <h2>Bluetooth and your car</h2>
 <p>The app connects to your OBD-II Bluetooth reader and asks your car the
-same standard read-only questions a mechanic's scan tool asks: battery level,
-fuel level, speed, odometer. It cannot change vehicle settings, clear fault
+same standard read-only questions a mechanic's scan tool asks: battery level
+and power, fuel level, speed, odometer. It cannot change vehicle settings, clear fault
 codes, or modify your car in any way. Vehicle data is processed and stored
 on your phone; the one exception is the calibration sharing described
 below, if you have it on.</p>
@@ -89,38 +95,47 @@ appear without an app update. These requests carry no personal information,
 no identifiers, and no usage data; they are plain file downloads.</p>
 
 <h2>Calibration sharing (your choice, on unless you decline)</h2>
-<p>When HybridEdge learns how a new vehicle model reports its data, the
-result can be shared so the app becomes accurate for other owners of the
-same model. During setup the app asks you directly, with sharing
-preselected; you can decline with one tap there, or switch it off later
-in Settings under Diagnostics. If sharing is on, the app submits two
-kinds of small anonymous record via Apple's CloudKit service. While your
-model is still being calibrated, it shares each calibration reading: the
-raw value from the car, the dash reading you typed, the channel, and your
-vehicle model. When a calibration completes, it shares the
-fitted numbers. Neither contains trips, locations, times of day, the
-support code from diagnostic reports, or anything that identifies you.
-Readings are used only to build your model's calibration and are deleted
-once that calibration is published; sharing stops by itself once your
-model is calibrated, and your car keeps calibrating on your phone whether
-you share or not.</p>
+<p>When HybridEdge learns how a vehicle model reports its data, the result
+can be shared so the app becomes accurate for other owners of the same
+model. During setup the app asks you directly, with sharing preselected; you
+can decline with one tap there, or switch it off later in Settings under
+Diagnostics. If sharing is on, the app submits small anonymous records via
+Apple's CloudKit service:</p>
+<ul>
+<li>While your model is still being calibrated, each calibration reading:
+the raw value from the car, the dash reading you typed, the channel, and
+your vehicle model.</li>
+<li>On cars that report their battery's power, each charge the app watches
+counts as one more reading: the energy the battery took in, and what the
+car's power reading added up to over the same time, with your vehicle
+model. When two or more cars of one model agree, their figure is published
+in the vehicle database the app downloads, so other owners of that model
+get measured regen straight away. Their own car's figure replaces it as soon
+as they have one.</li>
+<li>When your car finishes learning a reading, the line it worked out.</li>
+</ul>
+<p>None of these contains trips, locations, the support code from diagnostic
+reports, or anything that identifies you. Like anything saved through
+iCloud, each one arrives with the time it was saved and an anonymous
+identifier Apple assigns to your iCloud account for this app only; it says
+nothing about who you are, and we use it only to count how many different
+cars agree. Readings are used only to build your model's calibration and are
+deleted once that calibration is published. Sharing stops by itself once
+your model is calibrated, and your car keeps calibrating on your phone
+whether you share or not.</p>
 
 <h2>Diagnostic reports (only when you send them)</h2>
-<p>If something looks wrong, you can choose to send a diagnostic report from
-Settings → Diagnostics. Nothing is ever sent automatically. Before a report
-leaves your phone: coordinates are rounded to roughly one kilometre and place
-names are masked by default (you can enable precise locations if you choose).
-During the beta, reports also carry a random support code so reports from the
-same install can be grouped when you ask for help, and a display name only if
-you choose to set one; the code is generated on your phone and linked to
-nothing else.</p>
-<p>There are two ways to send a report, both started only by you. "Upload
-report" transmits it directly to the developer through Apple's iCloud
-service, along with your device model, iOS version, app version, and
-vehicle model; uploaded reports can be read only by the developer, and are
-deleted once the issue they describe is resolved. "Email report" hands the
-same report to your own mail or share sheet, so you can see exactly what it
-contains before sending it.</p>
+<p>If something looks wrong, you can choose to send a diagnostic report with
+Upload report, in Settings under Diagnostics. Nothing is ever sent
+automatically. Before a report leaves your phone, coordinates are rounded to
+roughly one kilometre and place names are removed. During the beta, reports
+also carry a random support code so reports from the same install can be
+grouped when you ask for help; the code is generated on your phone, is
+linked to nothing else, and never travels with calibration data.</p>
+<p>Upload report transmits the report directly to the developer through
+Apple's iCloud service, along with your device model, iOS version, app
+version, and vehicle model. Uploaded reports can be read only by the
+developer, and are deleted once the issue they describe is resolved.</p>
 
 <h2>Beta testing via TestFlight</h2>
 <p>If you use HybridEdge through Apple's TestFlight, Apple may provide us
@@ -135,12 +150,18 @@ These contain diagnostic information, not your driving history.</p>
 <p>If this policy ever changes, for example if a future optional feature
 involves a new kind of network request, the change will be described here
 with a new effective date, and the in-app description will match.
-(18 August 2026: calibration sharing described in full — readings while a
-model is being calibrated, fitted numbers on completion, deletion once
-published. 27 July 2026: added the optional calibration-sharing section above,
-exactly per this clause. 6 August 2026: calibration sharing changed from
-off by default to preselected during setup. What is shared did not
-change; only the default did.)</p>
+(19 September 2026: calibration sharing now includes two numbers from each
+charge the app watches, on cars that report their battery's power, and this
+page now says how different cars are counted; household sync can be deleted
+from the app; the diagnostic report section now matches the app, with one
+Upload report button, locations always rounded, and no display name.
+31 August 2026: household sync section added. 18 August 2026: calibration
+sharing described in full: readings while a model is being calibrated,
+fitted numbers on completion, deletion once published. 27 July 2026: added
+the optional calibration-sharing section above, exactly per this clause.
+6 August 2026: calibration sharing changed from off by default to
+preselected during setup. What is shared did not change; only the default
+did.)</p>
 
 <h2>Contact</h2>
 <p>Questions about privacy: <a href="mailto:privacy@hybridedge.com.au">privacy@hybridedge.com.au</a></p>
