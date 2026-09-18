@@ -16,7 +16,7 @@ HybridEdge beta · Updated 29 July 2026
 The short version: HybridEdge measures what powering your plug-in hybrid really costs, petrol and electricity together. No account, no ads, nothing leaves your phone\*, and you don't need any hardware to use it.
 
 **Summary footnote** (small grey text under the summary box)
-\*If you agree to share calibration data during setup, a few anonymous numbers about your car model are shared through Apple's CloudKit service to help accuracy for other owners. Never your trips, locations, or identity.
+\*Unless you choose it: household sync into your own iCloud if you set it up, anonymous calibration data if you agree during setup, and a diagnostic report if you send one. Details in the privacy question below.
 
 
 ## What is HybridEdge?
@@ -94,7 +94,10 @@ The port is designed for exactly this kind of accessory. HybridEdge only asks re
 ## What about my data and privacy?
 
 **Paragraph 1**
-There's no account and no sign-up because there's nothing to sign up to. There are no ads either, and there never will be. Your trips, costs, and locations are stored only on your phone. The app makes one periodic network request to download a public list of vehicle specifications, and it contains nothing about you. One more is optional, prompted during setup: the app asks to share anonymous calibration results (your car's model and the fitted numbers, never your trips or identity) so it can build accuracy for other owners of your make and model. It's preselected because the whole fleet benefits, and one tap turns it off. The full detail is in the privacy policy; it's short because there's so little to say.
+There's no account and no sign-up because there's nothing to sign up to. There are no ads either, and there never will be. Your trips, costs, and locations are stored on your phone, and nothing leaves it unless you choose to send it. On its own the app only downloads public reference data: the vehicle-specification list and the Australian electricity-plan list, neither containing anything about you.
+
+**Paragraph 2**
+Three things are your choice. Household sync copies a car's trips into your own iCloud for the phones you invite, and Delete household data on its card removes that copy. Calibration sharing, asked during setup, shares anonymous calibration readings while your model is being calibrated: the car's raw value, the dash figure you typed, and your car model, never your trips, location or identity. On cars that report their battery's power, it also shares two numbers from each charge the app watches, so other owners of your model get measured regen sooner. The readings are deleted once your model's calibration is published, and sharing stops by itself at that point. It's preselected because the whole fleet benefits, and one tap turns it off. And a diagnostic report leaves your phone only if you choose to send one when something looks wrong. The full detail is in the privacy policy.
 
 
 ## What iPhone do I need?
@@ -178,7 +181,7 @@ The app only asks the standard read-only questions a mechanic's scan tool asks. 
 Where is my data stored?
 
 **Answer**
-On your phone, full stop. No accounts, no cloud, no analytics. See the privacy policy.
+Your driving history lives on your phone, and in your own iCloud only if you set up household sync. No accounts and no analytics. The only other things that can leave are anonymous calibration readings, charge measurements included (your choice, and they stop once your model is calibrated), and a diagnostic report if you send one. See the privacy policy.
 
 **Question**
 My car isn't in the vehicle list.
@@ -208,10 +211,10 @@ Privacy policy · Terms of use · FAQ
 Privacy Policy
 
 **Updated line**
-HybridEdge for iOS · Effective 7 August 2026
+HybridEdge for iOS · Effective 19 September 2026
 
 **Summary box**
-The short version: HybridEdge has no accounts, no analytics, no ads, and no tracking. Your driving history lives on your phone and nowhere else. The app makes one kind of network request on its own (downloading a public list of vehicle specifications, containing nothing about you), plus one optional one: sharing anonymous calibration results to improve accuracy for everyone. That one is presented as a clear choice during setup, is on unless you decline, and can be switched off anytime.
+The short version: HybridEdge has no accounts, no analytics, no ads, and no tracking. Your driving history lives on your phone, and in your own iCloud only if you set up household sync. On its own the app only downloads public reference data (vehicle specifications and Australian electricity plans, containing nothing about you). Three things can go the other way, all your choice: household sync, into your own iCloud, only if you set it up; anonymous calibration data, which is presented as a clear choice during setup, is on unless you decline, and can be switched off anytime; and a diagnostic report, only ever when you choose to send one.
 
 
 ## No account, no sign-up
@@ -223,7 +226,19 @@ HybridEdge does not ask you to create an account or provide any personal details
 ## What the app records, and where it lives
 
 **Paragraph 1**
-Trips, fuel and charging events, costs, vehicle telemetry read from your OBD adapter, and trip locations are stored only on your device, in the app's local database. Nothing is uploaded, synced, or transmitted to us or to anyone else. Deleting the app deletes all of it; there is no server copy to ask us to remove (or restore), because none exists.
+Trips, fuel and charging events, costs, vehicle telemetry read from your OBD adapter, and trip locations are stored on your device, in the app's local database. Nothing leaves your phone unless you choose it: there is no account and no developer server holding a copy of your driving. Deleting the app deletes everything on the phone; we hold no copy to ask us to remove (or restore), because none exists.
+
+**Paragraph 2**
+You can choose to share three things, each described in full below: household sync, calibration data, and a diagnostic report.
+
+
+## Household sync (your choice, off until you set it up)
+
+**Paragraph 1**
+If you turn on household sync, your vehicle's trips, costs, and charging events are copied into your own iCloud and shared with the phones you invite, using Apple's iCloud sharing. This is the one feature that keeps a copy of your driving outside the phone, and it lives in your iCloud account under Apple's terms, not on any server of ours. We never see this data and cannot access it. Switching household sync off on a phone stops that phone syncing and deletes nothing.
+
+**Paragraph 2**
+To delete the copy, tap Delete household data on the Household sync card, in Settings under Data & Backups. On the phone that set up the household, it deletes the shared copy from iCloud for every phone. On any other phone, it deletes that phone's copy and leaves the household. Trips already on each phone stay on that phone. You can also remove the copy through your iCloud storage settings.
 
 
 ## Location
@@ -235,25 +250,31 @@ If you grant location permission, the app records trip start and end locations a
 ## Bluetooth and your car
 
 **Paragraph 1**
-The app connects to your OBD-II Bluetooth reader and asks your car the same standard read-only questions a mechanic's scan tool asks: battery level, fuel level, speed, odometer. It cannot change vehicle settings, clear fault codes, or modify your car in any way. Vehicle data is processed and stored on your phone only.
+The app connects to your OBD-II Bluetooth reader and asks your car the same standard read-only questions a mechanic's scan tool asks: battery level and power, fuel level, speed, odometer. It cannot change vehicle settings, clear fault codes, or modify your car in any way. Vehicle data is processed and stored on your phone; the one exception is the calibration sharing described below, if you have it on.
 
 
-## The one network request
+## Reference data the app downloads
 
 **Paragraph 1**
-The app periodically downloads its vehicle-specification database (battery sizes, tank capacities, and similar public figures for PHEV models) from our public repository, so new vehicles appear without an app update. This request carries no personal information, no identifiers, and no usage data; it is a plain file download.
+The app periodically downloads two public reference files from our public repository: its vehicle-specification database (battery sizes, tank capacities, and similar published figures for PHEV models) and its list of Australian electricity plans and their rates, so new vehicles and tariffs appear without an app update. These requests carry no personal information, no identifiers, and no usage data; they are plain file downloads.
 
 
 ## Calibration sharing (your choice, on unless you decline)
 
 **Paragraph 1**
-When HybridEdge learns how a new vehicle model reports its data, the result can be shared so the app becomes accurate for other owners of the same model. During setup the app asks you directly, with sharing preselected; you can decline with one tap there, or switch it off later in Settings under Diagnostics. If sharing is on, the app submits one small anonymous record per completed calibration: the vehicle make and model, the channel calibrated, and the fitted numbers, via Apple's CloudKit service. It contains no trips, no locations, and nothing that identifies you.
+When HybridEdge learns how a vehicle model reports its data, the result can be shared so the app becomes accurate for other owners of the same model. During setup the app asks you directly, with sharing preselected; you can decline with one tap there, or switch it off later in Settings under Diagnostics. If sharing is on, the app submits small anonymous records via Apple's CloudKit service: while your model is still being calibrated, each calibration reading (the raw value from the car, the dash reading you typed, the channel, and your vehicle model); on cars that report their battery's power, two numbers from each charge the app watches (the energy the battery took in, and what the car's power reading added up to over the same time); and, when your car finishes learning a reading, the line it worked out. When two or more cars of one model agree on the charge figure, it is published in the vehicle database the app downloads, so other owners of that model get measured regen straight away, until their own car's figure replaces it.
+
+**Paragraph 2**
+None of these contains trips, locations, the support code from diagnostic reports, or anything that identifies you. Like anything saved through iCloud, each one arrives with the time it was saved and an anonymous identifier Apple assigns to your iCloud account for this app only; it says nothing about who you are, and we use it only to count how many different cars agree. Readings are used only to build your model's calibration and are deleted once that calibration is published. Sharing stops by itself once your model is calibrated, and your car keeps calibrating on your phone whether you share or not.
 
 
 ## Diagnostic reports (only when you send them)
 
 **Paragraph 1**
-If something looks wrong, you can choose to send a diagnostic report from Settings → Diagnostics. Nothing is ever sent automatically. Before a report leaves your phone: coordinates are rounded to roughly one kilometre and place names are masked by default (you can enable precise locations if you choose), and the report is handed to your own mail or share sheet, so you can see exactly what it contains before sending it.
+If something looks wrong, you can choose to send a diagnostic report with Upload report, in Settings under Diagnostics. Nothing is ever sent automatically. Before a report leaves your phone, coordinates are rounded to roughly one kilometre and place names are removed. During the beta, reports also carry a random support code so reports from the same install can be grouped when you ask for help; the code is generated on your phone, is linked to nothing else, and never travels with calibration data.
+
+**Paragraph 2**
+Upload report transmits the report directly to the developer through Apple's iCloud service, along with your device model, iOS version, app version, and vehicle model. Uploaded reports can be read only by the developer, and are deleted once the issue they describe is resolved.
 
 
 ## Beta testing via TestFlight
@@ -271,7 +292,7 @@ HybridEdge is a vehicle-cost tool and is not directed at children.
 ## Changes
 
 **Paragraph 1**
-If this policy ever changes, for example if a future optional feature involves a new kind of network request, the change will be described here with a new effective date, and the in-app description will match. (27 July 2026: added the optional calibration-sharing section above, exactly per this clause. 6 August 2026: calibration sharing changed from off by default to preselected during setup. What is shared did not change; only the default did.)
+If this policy ever changes, for example if a future optional feature involves a new kind of network request, the change will be described here with a new effective date, and the in-app description will match. (19 September 2026: calibration sharing now includes two numbers from each charge the app watches, on cars that report their battery's power, and this page now says how different cars are counted; household sync can be deleted from the app; the diagnostic report section now matches the app, with one Upload report button, locations always rounded, and no display name. 31 August 2026: household sync section added. 18 August 2026: calibration sharing described in full: readings while a model is being calibrated, fitted numbers on completion, deletion once published. 27 July 2026: added the optional calibration-sharing section above, exactly per this clause. 6 August 2026: calibration sharing changed from off by default to preselected during setup. What is shared did not change; only the default did.)
 
 
 ## Contact

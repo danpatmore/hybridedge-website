@@ -28,16 +28,16 @@
 
 <main class="measure">
 <h1>Frequently asked questions</h1>
-<p class="updated">HybridEdge beta · Updated 20 August 2026</p>
+<p class="updated">HybridEdge beta · Updated 19 September 2026</p>
 
 <div class="summary">
   The short version: HybridEdge measures what powering your plug-in hybrid
   really costs, petrol and electricity together. No account, no ads, nothing
   leaves your phone*, and you don't need any hardware to use it.
 </div>
-<p class="fn">*Unless you choose it: anonymous calibration data if you agree
-during setup, and a diagnostic report if you send one. Details in the
-privacy question below.</p>
+<p class="fn">*Unless you choose it: household sync into your own iCloud if
+you set it up, anonymous calibration data if you agree during setup, and a
+diagnostic report if you send one. Details in the privacy question below.</p>
 
 <h2>What is HybridEdge?</h2>
 <p>An iPhone app that answers the question the trip computer won't: what does
@@ -187,22 +187,37 @@ warranty or insurance, ask your dealer before plugging one in.</p>
 <h2>What about my data and privacy?</h2>
 <p>There's no account and no sign-up because there's nothing to sign up to.
 There are no ads either, and there never will be. Your trips, costs, and
-locations are stored only on your phone, and nothing leaves it unless you
-choose to send it. On its own the app only
-downloads public reference data: the vehicle-specification list and the
-Australian electricity-plan list, neither containing anything about you.
-One thing is optional,
-prompted during setup: the app asks to share anonymous calibration
-readings while your model is being calibrated (the car's raw value, the dash
-figure you typed, and your car model, never your trips, location or identity)
-so it can build accuracy for other owners of your make and model. The readings
-are deleted once your model's calibration is published, and sharing stops by
-itself at that point. It's preselected
-because the whole fleet benefits, and one tap turns it off. The only other
-thing that can leave your phone is a diagnostic report, and only if you
-choose to send one when something looks wrong. The full detail is in the
-<a href="privacy.html">privacy policy</a>; it's short because there's so
-little to say.</p>
+locations are stored on your phone, and nothing leaves it unless you choose
+to send it. On its own the app only downloads public reference data: the
+vehicle-specification list and the Australian electricity-plan list, neither
+containing anything about you.</p>
+<p>Three things are your choice. Household sync copies a car's trips into
+your own iCloud for the phones you invite, and Delete household data on its
+card removes that copy. Calibration sharing, asked during setup, shares
+anonymous calibration readings while your model is being calibrated: the
+car's raw value, the dash figure you typed, and your car model, never your
+trips, location or identity. On cars that report their battery's power, it
+also shares two numbers from each charge the app watches, so other owners of
+your model get measured regen sooner. The readings are deleted once your
+model's calibration is published, and sharing stops by itself at that point.
+It's preselected because the whole fleet benefits, and one tap turns it off.
+And a diagnostic report leaves your phone only if you choose to send one when
+something looks wrong. The full detail is in the
+<a href="privacy.html">privacy policy</a>.</p>
+
+<h2 id="regen">How does the app measure regen?</h2>
+<p>Every BYD and Denza model in the beta so far reports the power flowing in
+and out of its battery, and HybridEdge measures regen from that as it
+happens. First it has to learn one number for your car, from a charge it
+watches. Tap Set up regen on the dashboard card, or go to Settings, My
+Vehicle, Regen setup. Plug in at home with the car switched off, and leave
+the screen open with the phone in or near the car. It shows a checklist and
+its progress, keeps the screen on, and says Done when it has learned the
+number, usually within 20 minutes on a home charger. You only do it once.</p>
+<p>Until then, regen is estimated from the battery percentage's steps, and
+each trip's detail says which way it was measured. If two or more owners of
+your model have already done it, the app uses their figure until yours is
+learned. Cars that don't report their battery's power keep the estimate.</p>
 
 <h2>My charger doesn't show kWh. How do I log a charge?</h2>
 <p>Leave the kWh field blank and enter the battery percentage before and
@@ -275,9 +290,10 @@ trip?" when the car starts, and end-trip options when you switch off.</p>
 matched by any app honestly. The tank percentage is what the car actually
 reports, so that's what HybridEdge uses, everywhere.</p>
 
-<h2>Why is the app dark?</h2>
-<p>The beta ships dark-only; it's designed around in-car readability. A
-proper light theme is on the roadmap.</p>
+<h2>Is there a light theme?</h2>
+<p>Yes. Settings, Display &amp; Appearance offers System, Light, or Dark.
+The Cockpit and CarPlay screens stay dark in every mode, because they're
+instrument displays built for reading in the car.</p>
 
 <h2>I'm not in Australia. Can I still use it?</h2>
 <p>HybridEdge is built for Australia and New Zealand for now. The measuring
@@ -296,8 +312,8 @@ beta.</p>
 
 <h2>I found a bug. What's the best way to report it?</h2>
 <p>Three ways, best first: tap "Upload report" in Settings → Diagnostics
-(one tap, sent straight to the developer, coordinates rounded and place
-names masked by default); take a screenshot inside the app and use
+(one tap, sent straight to the developer, with coordinates rounded and place
+names removed); take a screenshot inside the app and use
 TestFlight's built-in feedback (it attaches useful diagnostics
 automatically); or email
 <a href="mailto:support@hybridedge.com.au">support@hybridedge.com.au</a>.
