@@ -79,7 +79,7 @@ Any Wi-Fi reader | Not compatible | HybridEdge connects over Bluetooth only.
 Any classic Bluetooth reader | Not compatible | Most bargain "Bluetooth ELM327" dongles are classic Bluetooth, which iPhone apps cannot use. BLE only.
 
 **Paragraph 2**
-Help grow the Confirmed list: when a reader connects, the app records which model and firmware it identified as. Drive once with your reader, then send a report from Settings > Diagnostics, and your reader can be added to the table.
+Help grow the Confirmed list: when a reader connects, the app records which model and firmware it identified as. Drive once with your reader, then send a report from Settings > About, and your reader can be added to the table.
 
 
 ## Where is the OBD port, and can a reader harm my car?
@@ -133,7 +133,7 @@ Testing runs through Apple's TestFlight. Invites are going out in waves, so ask 
 ## I found a bug. What's the best way to report it?
 
 **Paragraph 1**
-Three ways, best first: take a screenshot inside the app and use TestFlight's built-in feedback (it attaches useful diagnostics automatically); send a report from Settings → Diagnostics (coordinates are rounded and place names masked by default, and you see the contents before sending); or email support@hybridedge.com.au. Every report gets read.
+Three ways, best first: take a screenshot inside the app and use TestFlight's built-in feedback (it attaches useful diagnostics automatically); send a report from Settings → About (coordinates are rounded and place names masked by default, and you see the contents before sending); or email support@hybridedge.com.au. Every report gets read.
 
 
 ## When will it be on the App Store?
@@ -193,7 +193,7 @@ The list updates over the air, so new PHEVs appear without an app update shortly
 Something doesn't match my dash.
 
 **Answer**
-That's exactly what we want to hear about. In the app: Settings → Diagnostics → Send diagnostic report. Reports mask your locations by default, and you see the contents before sending.
+That's exactly what we want to hear about. In the app: Settings → About → Upload report. Reports mask your locations by default, and you see the contents before sending.
 
 
 ## Contact
@@ -262,7 +262,7 @@ The app periodically downloads two public reference files from our public reposi
 ## Calibration sharing (your choice, on unless you decline)
 
 **Paragraph 1**
-When HybridEdge learns how a vehicle model reports its data, the result can be shared so the app becomes accurate for other owners of the same model. During setup the app asks you directly, with sharing preselected; you can decline with one tap there, or switch it off later in Settings under Diagnostics. If sharing is on, the app submits small anonymous records via Apple's CloudKit service: while your model is still being calibrated, each calibration reading (the raw value from the car, the dash reading you typed, the channel, and your vehicle model); on cars that report their battery's power, two numbers from each charge the app watches (the energy the battery took in, and what the car's power reading added up to over the same time); and, when your car finishes learning a reading, the line it worked out. When two or more cars of one model agree on the charge figure, it is published in the vehicle database the app downloads, so other owners of that model get measured regen straight away, until their own car's figure replaces it.
+When HybridEdge learns how a vehicle model reports its data, the result can be shared so the app becomes accurate for other owners of the same model. During setup the app asks you directly, with sharing preselected; you can decline with one tap there, or switch it off later in Settings under About. If sharing is on, the app submits small anonymous records via Apple's CloudKit service: while your model is still being calibrated, each calibration reading (the raw value from the car, the dash reading you typed, the channel, and your vehicle model); on cars that report their battery's power, two numbers from each charge the app watches (the energy the battery took in, and what the car's power reading added up to over the same time); and, when your car finishes learning a reading, the line it worked out. When two or more cars of one model agree on the charge figure, it is published in the vehicle database the app downloads, so other owners of that model get measured regen straight away, until their own car's figure replaces it.
 
 **Paragraph 2**
 None of these contains trips, locations, the support code from diagnostic reports, or anything that identifies you. Like anything saved through iCloud, each one arrives with the time it was saved and an anonymous identifier Apple assigns to your iCloud account for this app only; it says nothing about who you are, and we use it only to count how many different cars agree. Readings are used only to build your model's calibration and are deleted once that calibration is published. Sharing stops by itself once your model is calibrated, and your car keeps calibrating on your phone whether you share or not.
@@ -271,7 +271,7 @@ None of these contains trips, locations, the support code from diagnostic report
 ## Diagnostic reports (only when you send them)
 
 **Paragraph 1**
-If something looks wrong, you can choose to send a diagnostic report with Upload report, in Settings under Diagnostics. Nothing is ever sent automatically. Before a report leaves your phone, coordinates are rounded to roughly one kilometre and place names are removed. During the beta, reports also carry a random support code so reports from the same install can be grouped when you ask for help; the code is generated on your phone, is linked to nothing else, and never travels with calibration data.
+If something looks wrong, you can choose to send a diagnostic report with Upload report, in Settings under About. Nothing is ever sent automatically. Before a report leaves your phone, coordinates are rounded to roughly one kilometre and place names are removed. During the beta, reports also carry a random support code so reports from the same install can be grouped when you ask for help; the code is generated on your phone, is linked to nothing else, and never travels with calibration data.
 
 **Paragraph 2**
 Upload report transmits the report directly to the developer through Apple's iCloud service, along with your device model, iOS version, app version, and vehicle model. Uploaded reports can be read only by the developer, and are deleted once the issue they describe is resolved.
