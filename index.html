@@ -7,7 +7,7 @@
 <meta name="description" content="HybridEdge reads your plug-in hybrid's own data over a ~$50 OBD reader and prices every kilometre with your real electricity plan and petrol receipts. Australian made, in beta now.">
 <meta property="og:title" content="HybridEdge · Know what every drive really costs">
 <meta property="og:description" content="Measured from the car over a ~$50 OBD reader. Electric and petrol costs, priced with your actual rates.">
-<meta property="og:image" content="https://hybridedge.com.au/images/og-image.jpg">
+<meta property="og:image" content="https://hybridedge.com.au/images/v3/og-image.jpg">
 <link rel="icon" type="image/png" href="images/v2/app-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -113,8 +113,8 @@ header {
   text-transform: uppercase; color: var(--faint); margin-bottom: 10px;
 }
 .split-bar { display: flex; gap: 3px; height: 10px; margin-bottom: 10px; }
-.split-bar .ev { background: var(--electric); border-radius: 999px; width: 35%; }
-.split-bar .ice { background: var(--petrol); border-radius: 999px; width: 65%; }
+.split-bar .ev { background: var(--electric); border-radius: 999px; width: 75%; }
+.split-bar .ice { background: var(--petrol); border-radius: 999px; width: 25%; }
 .split-legend { display: flex; justify-content: space-between; font-size: 13.5px; }
 .hero-fn { font-size: 13px; color: var(--faint); margin-top: 20px; }
 .hero-fn a { color: var(--faint); text-underline-offset: 3px; }
@@ -276,24 +276,25 @@ footer { padding: 44px 0 60px; }
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
     <linearGradient id="fg1" x1="47.87" y1="1062.79" x2="1021.22" y2="1062.79" gradientUnits="userSpaceOnUse">
-      <stop offset=".27" stop-color="#ec9051"/><stop offset=".54" stop-color="#ec9051"/>
-      <stop offset=".57" stop-color="#ee9151"/><stop offset=".73" stop-color="#f59653"/>
+      <stop offset=".27" stop-color="#2a282a"/><stop offset=".54" stop-color="#2a282a"/>
+      <stop offset=".57" stop-color="#2d2b2d"/><stop offset=".73" stop-color="#333133"/>
     </linearGradient>
     <linearGradient id="fg2" x1="1021.48" y1="802.85" x2="1030.32" y2="802.85" gradientTransform="translate(2051.803 1605.7) rotate(-180)" gradientUnits="userSpaceOnUse">
-      <stop offset=".28" stop-color="#a3551f"/><stop offset=".49" stop-color="#c77a43"/><stop offset=".73" stop-color="#eca068"/>
+      <stop offset=".28" stop-color="#1d1b1d"/><stop offset=".49" stop-color="#4a474a"/><stop offset=".73" stop-color="#8c898b"/>
     </linearGradient>
     <linearGradient id="fg3" x1="39.68" y1="898.71" x2="48.52" y2="898.71" gradientTransform="translate(88.197 1797.415) rotate(-180)" gradientUnits="userSpaceOnUse">
-      <stop offset=".27" stop-color="#eca068"/><stop offset=".51" stop-color="#c77a43"/><stop offset=".72" stop-color="#a3551f"/>
+      <stop offset=".27" stop-color="#8c898b"/><stop offset=".51" stop-color="#4a474a"/><stop offset=".72" stop-color="#1d1b1d"/>
     </linearGradient>
     <linearGradient id="fg4" x1="39.68" y1="706.65" x2="48.52" y2="706.65" gradientTransform="translate(88.197 1413.2916) rotate(-180)" xlink:href="#fg3"/>
     <linearGradient id="fg5" x1="39.68" y1="513.2" x2="48.52" y2="513.2" gradientTransform="translate(88.197 1026.3946) rotate(-180)" xlink:href="#fg3"/>
     <symbol id="iframe17" viewBox="0 0 1070 2115">
       <path fill="url(#fg1)" d="M866.56,2068.27H202.53c-20.87,0-41.13-4.09-60.21-12.16-18.42-7.79-34.96-18.94-49.16-33.14-14.2-14.2-25.35-30.74-33.14-49.16-8.07-19.08-12.16-39.33-12.16-60.21V211.96c0-20.87,4.09-41.13,12.16-60.21,7.79-18.42,18.94-34.96,33.14-49.16,14.2-14.2,30.74-25.35,49.16-33.14,19.08-8.07,39.33-12.16,60.21-12.16h664.03c20.87,0,41.13,4.09,60.21,12.16,18.42,7.79,34.96,18.94,49.16,33.14,14.2,14.2,25.35,30.74,33.14,49.16,8.07,19.08,12.16,39.33,12.16,60.21v1701.65c0,20.87-4.09,41.13-12.16,60.21-7.79,18.42-18.94,34.96-33.14,49.16-14.2,14.2-30.74,25.35-49.16,33.14-19.08,8.07-39.33,12.16-60.21,12.16ZM202.53,87.33c-68.72,0-124.63,55.91-124.63,124.63v1701.65c0,68.72,55.91,124.63,124.63,124.63h664.03c68.72,0,124.63-55.91,124.63-124.63V211.96c0-68.72-55.91-124.63-124.63-124.63H202.53Z"/>
-      <path fill="#232323" d="M856.44,2054.75H212.65c-20.48,0-40.36-4.02-59.08-11.93-18.08-7.65-34.31-18.59-48.24-32.52-13.93-13.93-24.88-30.17-32.52-48.24-7.92-18.72-11.93-38.6-11.93-59.08V222.6c0-20.48,4.02-40.36,11.93-59.09,7.65-18.08,18.59-34.31,32.52-48.24,13.93-13.93,30.17-24.88,48.24-32.52,18.72-7.92,38.6-11.93,59.08-11.93h643.79c20.48,0,40.36,4.02,59.08,11.93,18.08,7.65,34.31,18.59,48.24,32.52,13.93,13.93,24.88,30.17,32.52,48.24,7.92,18.72,11.93,38.6,11.93,59.09v1680.37c0,20.48-4.02,40.36-11.93,59.08-7.65,18.08-18.59,34.31-32.52,48.24-13.93,13.93-30.17,24.88-48.24,32.52-18.72,7.92-38.6,11.93-59.08,11.93ZM212.65,100.85c-67.13,0-121.75,54.62-121.75,121.75v1680.37c0,67.13,54.62,121.75,121.75,121.75h643.79c67.13,0,121.75-54.62,121.75-121.75V222.6c0-67.13-54.62-121.75-121.75-121.75H212.65Z"/>
+      <path fill="#080808" stroke="#7d7a7d" stroke-width="3" d="M856.44,2054.75H212.65c-20.48,0-40.36-4.02-59.08-11.93-18.08-7.65-34.31-18.59-48.24-32.52-13.93-13.93-24.88-30.17-32.52-48.24-7.92-18.72-11.93-38.6-11.93-59.08V222.6c0-20.48,4.02-40.36,11.93-59.09,7.65-18.08,18.59-34.31,32.52-48.24,13.93-13.93,30.17-24.88,48.24-32.52,18.72-7.92,38.6-11.93,59.08-11.93h643.79c20.48,0,40.36,4.02,59.08,11.93,18.08,7.65,34.31,18.59,48.24,32.52,13.93,13.93,24.88,30.17,32.52,48.24,7.92,18.72,11.93,38.6,11.93,59.09v1680.37c0,20.48-4.02,40.36-11.93,59.08-7.65,18.08-18.59,34.31-32.52,48.24-13.93,13.93-30.17,24.88-48.24,32.52-18.72,7.92-38.6,11.93-59.08,11.93ZM212.65,100.85c-67.13,0-121.75,54.62-121.75,121.75v1680.37c0,67.13,54.62,121.75,121.75,121.75h643.79c67.13,0,121.75-54.62,121.75-121.75V222.6c0-67.13-54.62-121.75-121.75-121.75H212.65Z"/>
       <path fill="url(#fg2)" d="M1030.32,680.3h0v245.1h0c-4.88,0-8.84-3.96-8.84-8.84v-227.42c0-4.88,3.96-8.84,8.84-8.84Z" transform="translate(2051.803 1605.7) rotate(-180)"/>
       <path fill="url(#fg3)" d="M39.68,822.96h0c4.88,0,8.84,3.96,8.84,8.84v133.82c0,4.88-3.96,8.84-8.84,8.84h0v-151.5h0Z" transform="translate(88.197 1797.415) rotate(-180)"/>
       <path fill="url(#fg4)" d="M39.68,630.9h0c4.88,0,8.84,3.96,8.84,8.84v133.82c0,4.88-3.96,8.84-8.84,8.84h0v-151.5h0Z" transform="translate(88.197 1413.2916) rotate(-180)"/>
       <path fill="url(#fg5)" d="M39.68,468.13h0c4.88,0,8.84,3.96,8.84,8.84v72.46c0,4.88-3.96,8.84-8.84,8.84h0v-90.14h0Z" transform="translate(88.197 1026.3946) rotate(-180)"/>
+      <rect x="406.6" y="120" width="256" height="79" rx="39.5" fill="#000"/>
     </symbol>
   </defs>
 </svg>
@@ -325,14 +326,14 @@ footer { padding: 44px 0 60px; }
       <div class="split">
         <div class="split-bar"><span class="ev"></span><span class="ice"></span></div>
         <div class="split-legend">
-          <span class="ev">Pure-EV 35% · $30.03</span>
-          <span class="ice">Engine on 65% · $89.28</span>
+          <span class="ev">Pure-EV 75% · $160.10</span>
+          <span class="ice">Engine on 25% · $283.84</span>
         </div>
       </div>
       <p class="hero-fn">*One of the currently compatible readers. See <a href="faq.html">the FAQ</a> for the adapters we have tested.</p>
     </div>
     <div class="phone" style="--w: 320px">
-      <img class="shot" src="images/v2/dashboard-640.jpg" alt="HybridEdge dashboard showing $17.07 per 100 km over 30 days, with electric and petrol cost split">
+      <img class="shot" src="images/v3/dashboard-640.jpg" alt="HybridEdge dashboard showing $6.79 per 100 km over 12 months, with electric and petrol cost split">
       <svg class="frame" viewBox="0 0 1070 2115" role="img" aria-label="iPhone frame"><use href="#iframe17"/></svg>
     </div>
   </div>
@@ -379,7 +380,7 @@ footer { padding: 44px 0 60px; }
     </div>
     <div class="proof">
       <img class="photo" src="images/v2/dash-proof.jpg" alt="A phone running HybridEdge held in front of a Denza instrument cluster">
-      <img class="overlay" src="images/v2/dashboard-640.jpg" alt="">
+      <img class="overlay" src="images/v3/dashboard-640.jpg" alt="">
     </div>
   </div>
 </section>
@@ -401,19 +402,19 @@ footer { padding: 44px 0 60px; }
     <div class="rail" id="rail">
       <div class="slide">
         <div class="phone">
-          <img class="shot" src="images/v2/cost-breakdown-640.jpg" alt="Cost breakdown screen">
+          <img class="shot" src="images/v3/cost-breakdown-640.jpg" alt="Cost breakdown screen">
           <svg class="frame" viewBox="0 0 1070 2115" aria-hidden="true"><use href="#iframe17"/></svg>
         </div>
         <div>
           <p class="num">01 · True cost</p>
           <h3>Every trip in dollars, split by energy source.</h3>
           <p>Electric cost, petrol cost, and the combined per-100 km figure for each drive, each week, and each month. Compared honestly against what a petrol or diesel car would have cost.</p>
-          <p class="close c-green">$17.07/100 km is a real 30-day figure, not a brochure one.</p>
+          <p class="close c-green">Your figure comes from your own drives, not a brochure.</p>
         </div>
       </div>
       <div class="slide">
         <div class="phone">
-          <img class="shot" src="images/v2/logbook-640.jpg" alt="Trip logbook">
+          <img class="shot" src="images/v3/logbook-640.jpg" alt="Trip logbook">
           <svg class="frame" viewBox="0 0 1070 2115" aria-hidden="true"><use href="#iframe17"/></svg>
         </div>
         <div>
@@ -425,7 +426,7 @@ footer { padding: 44px 0 60px; }
       </div>
       <div class="slide">
         <div class="phone">
-          <img class="shot" src="images/v2/energy-log-640.jpg" alt="Energy log of charges and fills">
+          <img class="shot" src="images/v3/energy-log-640.jpg" alt="Energy log of charges and fills">
           <svg class="frame" viewBox="0 0 1070 2115" aria-hidden="true"><use href="#iframe17"/></svg>
         </div>
         <div>
@@ -437,7 +438,7 @@ footer { padding: 44px 0 60px; }
       </div>
       <div class="slide">
         <div class="phone">
-          <img class="shot" src="images/v2/energy-plan-picker-640.jpg" alt="Electricity plan picker">
+          <img class="shot" src="images/v3/energy-plan-picker-640.jpg" alt="Electricity plan picker">
           <svg class="frame" viewBox="0 0 1070 2115" aria-hidden="true"><use href="#iframe17"/></svg>
         </div>
         <div>
@@ -449,19 +450,19 @@ footer { padding: 44px 0 60px; }
       </div>
       <div class="slide">
         <div class="phone">
-          <img class="shot" src="images/v2/refuel-sheet-640.jpg" alt="Refuel entry with receipt scanning">
+          <img class="shot" src="images/v3/receipt-scan-640.jpg" alt="A scanned fuel receipt, ready to save">
           <svg class="frame" viewBox="0 0 1070 2115" aria-hidden="true"><use href="#iframe17"/></svg>
         </div>
         <div>
           <p class="num">05 · Receipt scanning</p>
           <h3>Snap a refill, capture the cost.</h3>
-          <p>Litres and price read straight off the pump or receipt. Charging sessions scan too, from a screenshot of your charger's app or your charger's screen.</p>
+          <p>Litres, price and total read straight off the receipt. Charging sessions scan too, from a screenshot of your charger's app or your charger's screen.</p>
           <p class="close c-petrol">Every electron in your battery and litre of petrol in your tank has a price.</p>
         </div>
       </div>
       <div class="slide">
         <div class="phone">
-          <img class="shot" src="images/v2/garage-640.jpg" alt="Garage with vehicle specifications">
+          <img class="shot" src="images/v3/make-picker-640.jpg" alt="Choosing a make from the vehicle list">
           <svg class="frame" viewBox="0 0 1070 2115" aria-hidden="true"><use href="#iframe17"/></svg>
         </div>
         <div>
@@ -473,7 +474,7 @@ footer { padding: 44px 0 60px; }
       </div>
       <div class="slide">
         <div class="phone">
-          <img class="shot" src="images/v2/cockpit-640.jpg" alt="Live cockpit view with battery and fuel dials">
+          <img class="shot" src="images/v3/cockpit-640.jpg" alt="Live cockpit view with battery and fuel dials">
           <svg class="frame" viewBox="0 0 1070 2115" aria-hidden="true"><use href="#iframe17"/></svg>
         </div>
         <div>
@@ -481,6 +482,30 @@ footer { padding: 44px 0 60px; }
           <h3>Watch the drive as it happens.</h3>
           <p>Battery, fuel, speed, and which energy source is doing the work right now, live from the car while you drive. CarPlay included.</p>
           <p class="close c-electric">Measured values only. When the reader is off, the dials say so.</p>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="phone">
+          <img class="shot" src="images/v3/auto-drive-640.jpg" alt="Dashboard with Auto Drive armed">
+          <svg class="frame" viewBox="0 0 1070 2115" aria-hidden="true"><use href="#iframe17"/></svg>
+        </div>
+        <div>
+          <p class="num">08 · Auto Drive</p>
+          <h3>Start the car, and drive.</h3>
+          <p>With a reader plugged in, Auto Drive starts the trip as you pull away and saves it a few minutes after you park, so a quick stop stays part of the same trip. It can be switched on once the app has learned your car's battery reading.</p>
+          <p class="close c-electric">Nothing to tap at the start or the end.</p>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="phone">
+          <img class="shot" src="images/v3/charge-detected-640.jpg" alt="A home charge recorded automatically on the dashboard">
+          <svg class="frame" viewBox="0 0 1070 2115" aria-hidden="true"><use href="#iframe17"/></svg>
+        </div>
+        <div>
+          <p class="num">09 · Charge detection</p>
+          <h3>Home charging, logged for you.</h3>
+          <p>With a reader plugged in, when the battery rises while the car is parked, the app records the charge: how much went in, when, and what it cost on your electricity plan. If it came from solar or a home battery, one tap says so.</p>
+          <p class="close c-green">No typing when you charge at home.</p>
         </div>
       </div>
     </div>
