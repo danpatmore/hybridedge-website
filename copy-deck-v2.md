@@ -80,7 +80,7 @@ Every trip in dollars, split by energy source.
 Electric cost, petrol cost, and the combined per-100 km figure for each drive, each week, and each month. Compared honestly against what a petrol or diesel car would have cost.
 
 **Closing line (green)**
-$17.07/100 km is a real 30-day figure, not a brochure one.
+Your figure comes from your own drives, not a brochure.
 
 ### Slide 02 · Logbook
 
@@ -122,7 +122,7 @@ Solar counts as free. Free windows count as free.
 Snap a refill, capture the cost.
 
 **Paragraph**
-Litres and price read straight off the pump or receipt. Charging sessions scan too, from a screenshot of your charger's app or your charger's screen.
+Litres, price and total read straight off the receipt. Charging sessions scan too, from a screenshot of your charger's app or your charger's screen.
 
 **Closing line (gold)**
 Every electron in your battery and litre of petrol in your tank has a price.
@@ -148,6 +148,28 @@ Battery, fuel, speed, and which energy source is doing the work right now, live 
 
 **Closing line (blue)**
 Measured values only. When the reader is off, the dials say so.
+
+### Slide 08 · Auto Drive
+
+**Heading**
+Start the car, and drive.
+
+**Paragraph**
+With a reader plugged in, Auto Drive starts the trip as you pull away and saves it a few minutes after you park, so a quick stop stays part of the same trip. It can be switched on once the app has learned your car's battery reading.
+
+**Closing line (blue)**
+Nothing to tap at the start or the end.
+
+### Slide 09 · Charge detection
+
+**Heading**
+Home charging, logged for you.
+
+**Paragraph**
+With a reader plugged in, when the battery rises while the car is parked, the app records the charge: how much went in, when, and what it cost on your electricity plan. If it came from solar or a home battery, one tap says so.
+
+**Closing line (green)**
+No typing when you charge at home.
 
 ## Privacy
 
