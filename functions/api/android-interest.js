@@ -1,7 +1,8 @@
 // Android interest waitlist (20 Aug 2026). POST stores one signup into the
-// ANDROID_INTEREST KV namespace; GET with the secret key renders the developer's
-// private count page. No email, no notifications — the quiet list.
-const COUNT_KEY = "4c003799480d6fd96d1ac353ba13b609";
+// ANDROID_INTEREST KV namespace; GET with the secret key renders the
+// developer's private count page. No email, no notifications: the quiet list.
+// The key is the Pages secret COUNT_KEY (24 Nov 2026: this repo is public
+// now, so a key written here would be readable). Without it the page is shut.
 
 export async function onRequestPost({ request, env }) {
   let body;
@@ -18,7 +19,7 @@ export async function onRequestPost({ request, env }) {
 
 export async function onRequestGet({ request, env }) {
   const url = new URL(request.url);
-  if (url.searchParams.get("key") !== COUNT_KEY) {
+  if (!env.COUNT_KEY || url.searchParams.get("key") !== env.COUNT_KEY) {
     return new Response("Not found", { status: 404 });
   }
   const entries = [];
